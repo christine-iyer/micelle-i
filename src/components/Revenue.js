@@ -52,7 +52,7 @@ export default function Revenue() {
       </Row>
 
       <Form.Group className="mb-3" id="formGridCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
+        <Form.Check type="checkbox" label="Barter" />
       </Form.Group>
 
       <Button variant="primary" type="submit">

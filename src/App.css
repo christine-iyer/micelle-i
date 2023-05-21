@@ -36,7 +36,7 @@ Form {
 .nav {
   display: flex;
   justify-content: space-around;
-  background-color: pink;
+  background-color: rgb(141,108,111);
   color: ghostwhite;
   width: 100vw;
   

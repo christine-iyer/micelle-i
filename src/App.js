@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from "react-dom/client";
-// import styled from 'styled-components'
+import styled from 'styled-components'
 // import { useTable, usePagination } from 'react-table'
 import './App.css';
 import Revenue from './pages/Revenue'
@@ -60,6 +59,8 @@ function App() {
 
   return (
     <div className="App">
+      <div className="App-header">
+
       <>
         <BrowserRouter>
           <Bar />
@@ -72,6 +73,7 @@ function App() {
           </Routes>
         </BrowserRouter>
         </>
+        </div>
         </div>
   );
 }

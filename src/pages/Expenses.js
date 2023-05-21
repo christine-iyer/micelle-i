@@ -83,9 +83,10 @@ export default function Expenses() {
       <Form.Group className="mb-3">
         <Form.Check
           required
-          label="Agree to terms and conditions"
+          label="barter"
           feedback="You must agree before submitting."
           feedbackType="invalid"
+          style={{position: "inherit"}}
         />
       </Form.Group>
       <Button type="submit">Submit form</Button>

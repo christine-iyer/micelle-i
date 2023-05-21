@@ -14,20 +14,20 @@ export default function Bar(props) {
       </Link>
      
       <Link to="/revenue">
-        <h1> Revenue </h1>
+        <h1>Revenue</h1>
       </Link>
      
 
       <Link to="/expenses">
-        <h1> Expense </h1>
+        <h1>Expense</h1>
       </Link>
  
       <Link to="/newplant">
-        <h1> New Plant </h1>
+        <h1>New Plant</h1>
       </Link>
    
       <Link to="/newnon">
-        <h1> New Inventory Item </h1>
+        <h1>New Inventory Item</h1>
       </Link>
 </Nav>
 </Container>

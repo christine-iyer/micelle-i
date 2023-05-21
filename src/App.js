@@ -8,9 +8,11 @@ import Revenue from './components/Revenue'
 import Expenses from './components/Expenses'
 import NewPlantInventoryItem from './components/NewPlantInventoryItem'
 import NewNonPlantInventoryItem from './components/NewNonPlantInventoryItem'
-import Table from './components/Table'
+import EditableTable from './components/Table'
+import EditableCell from './components/EditableCell'
 import makeData from './makeData';
 function App() {
+  
   const columns = React.useMemo(
     () => [
       {
@@ -66,7 +68,7 @@ function App() {
         <NewNonPlantInventoryItem />
         </>
         <br></br>
-       <Table columns={columns} data={data}/>
+       <EditableTable columns={columns} data={data}/>
       </header>
     </div>
   );

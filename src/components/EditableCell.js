@@ -1,3 +1,4 @@
+import {React} from 'react'
 const EditableCell = ({
   value: initialValue,
   row: { index },

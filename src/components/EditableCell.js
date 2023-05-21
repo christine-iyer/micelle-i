@@ -1,4 +1,4 @@
-import {React} from 'react'
+import {useEffect} from 'react'
 const EditableCell = ({
   value: initialValue,
   row: { index },

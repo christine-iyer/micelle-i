@@ -1,18 +1,21 @@
 import logo from './logo.svg';
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import styled from 'styled-components'
-import { useTable, usePagination } from 'react-table'
+import ReactDOM from "react-dom/client";
+// import styled from 'styled-components'
+// import { useTable, usePagination } from 'react-table'
 import './App.css';
-import Revenue from './components/Revenue'
-import Expenses from './components/Expenses'
-import NewPlantInventoryItem from './components/NewPlantInventoryItem'
-import NewNonPlantInventoryItem from './components/NewNonPlantInventoryItem'
-import EditableTable from './components/Table'
-import EditableCell from './components/EditableCell'
+import Revenue from './pages/Revenue'
+import Expenses from './pages/Expenses'
+import NewPlantInventoryItem from './pages/NewPlantInventoryItem'
+import NewNonPlantInventoryItem from './pages/NewNonPlantInventoryItem'
+import Table from './pages/Table'
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+
 import makeData from './makeData';
+import Bar from './components/Bar';
 function App() {
-  
+
   const columns = React.useMemo(
     () => [
       {
@@ -54,23 +57,22 @@ function App() {
   )
 
   const data = React.useMemo(() => makeData(20), [])
-  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <>
-        <Revenue />
-        <br></br>
-        <Expenses />
-        <br></br>
-        <NewPlantInventoryItem />
-        <br></br>
-        <NewNonPlantInventoryItem />
+      <>
+        <BrowserRouter>
+          <Bar />
+          <Routes>
+            <Route path="/" element={<Table />}/>
+            <Route path="/revenue" element={<Revenue />} />
+            <Route path="/expenses" element={<Expenses />} />
+            <Route path="/newplant" element={<NewPlantInventoryItem />} />
+            <Route path="/newnon" element={<NewNonPlantInventoryItem />} />
+          </Routes>
+        </BrowserRouter>
         </>
-        <br></br>
-       <EditableTable columns={columns} data={data}/>
-      </header>
-    </div>
+        </div>
   );
 }
 

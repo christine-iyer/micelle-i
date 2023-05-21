@@ -1,7 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-export default function NewPlantInventoryItem() {
+
+export default function NewNonPlantInventoryIyem() {
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">

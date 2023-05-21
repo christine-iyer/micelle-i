@@ -33,3 +33,16 @@ Form {
   margin: 1fr;
 }
 
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: pink;
+  color: ghostwhite;
+  width: 100vw;
+  
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+

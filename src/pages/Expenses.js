@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
+import DatePicker from "react-datepicker";
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function Expenses() {
   const [validated, setValidated] = useState(false);
+  const [startDate, setStartDate] = useState(false);
+
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -26,25 +30,25 @@ export default function Expenses() {
           <Form.Control
             required
             type="text"
-            placeholder="First name"
-            defaultValue="Mark"
+            placeholder="Account Name"
+        
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom02">
-          <Form.Label>Description of Service</Form.Label>
+          <Form.Label>Description of Product or Service</Form.Label>
           <Form.Control
             required
             type="text"
-            placeholder="Last name"
-            defaultValue="Otto"
+            placeholder="Provide a brief description of the receipt"
+            
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustomUsername">
           <Form.Label>Username</Form.Label>
           <InputGroup hasValidation>
-            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+            {/* <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text> */}
             <Form.Control
               type="text"
               placeholder="Username"
@@ -80,15 +84,44 @@ export default function Expenses() {
           </Form.Control.Feedback>
         </Form.Group>
       </Row>
-      <Form.Group className="mb-3">
+      <Row className="mb-3">
+      <Form.Group as={Col} md="4" controlId="barter">
+      <Form.Label>Barter? If so mark this box</Form.Label>
         <Form.Check
           required
-          label="barter"
-          feedback="You must agree before submitting."
-          feedbackType="invalid"
-          style={{position: "inherit"}}
+
+          // style={{position: "inherit"}}
         />
       </Form.Group>
+      <Form.Group as={Col} md="3" controlId="validationAmount">
+          <Form.Label>Amount</Form.Label>
+          <InputGroup hasValidation>
+            <InputGroup.Text id="inputGroupPrepend">$</InputGroup.Text>
+            <Form.Control
+              type="text"
+              placeholder="00.00"
+              aria-describedby="inputGroupPrepend"
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              Please choose a username.
+            </Form.Control.Feedback>
+          </InputGroup>
+        </Form.Group>
+        <DatePicker
+              isClearable
+
+              onChange={val => {
+                setStartDate(val);
+               
+              }}
+              
+            />
+
+        
+     
+
+      </Row>
       <Button type="submit">Submit form</Button>
     </Form>
   );

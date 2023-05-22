@@ -6,7 +6,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+```js
+import Input from 'react-phone-number-input/input'
+
+<Input
+  country="US"
+  value={value}
+  onChange={setValue}/>
+
+  // or
+
+  import Input from 'react-phone-number-input/input'
+
+<Input
+  value={value}
+  onChange={setValue}/>
+```
+
 
 ### `npm start`
 

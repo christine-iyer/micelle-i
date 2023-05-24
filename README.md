@@ -23,6 +23,60 @@ import Input from 'react-phone-number-input/input'
   onChange={setValue}/>
 ```
 
+### Text Input
+```js
+ <Form.Group as={Col} md="5" controlId="validationCustom01">
+          <Form.Label>Pay to the Order of</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            placeholder="Account Name" />
+          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+        </Form.Group>
+        </Form.Group>
+```
+
+### Select Input
+```js
+ <Form.Group as={Col} md="6" controlId="validationUnitMeasure">
+          <Form.Label>Unit Measure</Form.Label>
+          <Form.Select defaultValue="Choose...">
+            <option>oz.</option>
+            <option>gal.</option>
+            <option value="1">lb.</option>
+            <option>cubic yard</option>
+            <option>cubic foot</option>
+            <option value="1">per each</option>
+            <option value="1">Other...Please add in Description</option>
+          </Form.Select>
+        </Form.Group>
+```
+
+### Numeric Input
+```js
+<Form.Group as={Col} md="6" controlId="validationQuantity">
+          <Form.Label>Quantity</Form.Label>
+          <InputGroup hasValidation>
+            <Form.Control
+              type="number"
+              placeholder="1"
+              aria-describedby="inputGroupPrepend"
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              Please choose a valid quantity.
+            </Form.Control.Feedback>
+          </InputGroup>
+        </Form.Group>
+```
+
+### Select Checkbox
+
+```js
+<Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Check type="checkbox" label="Check me out" />
+</Form.Group>
+```
 
 ### `npm start`
 

@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function Expenses() {
   const [validated, setValidated] = useState(false);
-  const [startDate, setStartDate] = useState(false);
+  // const [startDate, setStartDate] = useState('');
 
 
   const handleSubmit = (event) => {
@@ -25,75 +25,45 @@ export default function Expenses() {
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
+        <Form.Group as={Col} md="5" controlId="validationCustom01">
           <Form.Label>Pay to the Order of</Form.Label>
           <Form.Control
             required
             type="text"
-            placeholder="Account Name"
-        
-          />
+            placeholder="Account Name" />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
-          <Form.Label>Description of Product or Service</Form.Label>
+        <Form.Group as={Col} md="5" controlId="validationDescription">
+          <Form.Label>Description </Form.Label>
           <Form.Control
             required
             type="text"
-            placeholder="Provide a brief description of the receipt"
-            
-          />
+            placeholder="Provide a brief description of the receipt" />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-          <Form.Label>Username</Form.Label>
+      </Row>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} md="11" controlId="validationCustomUsername">
+          <Form.Label>Address</Form.Label>
           <InputGroup hasValidation>
             {/* <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text> */}
             <Form.Control
               type="text"
-              placeholder="Username"
+              placeholder="Address"
               aria-describedby="inputGroupPrepend"
               required
             />
             <Form.Control.Feedback type="invalid">
-              Please choose a username.
+              Please enter full ailimg address.
             </Form.Control.Feedback>
           </InputGroup>
         </Form.Group>
-      </Row>
-      <Row className="mb-3">
-        <Form.Group as={Col} md="6" controlId="validationCustom03">
-          <Form.Label>City</Form.Label>
-          <Form.Control type="text" placeholder="City" required />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid city.
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom04">
-          <Form.Label>State</Form.Label>
-          <Form.Control type="text" placeholder="State" required />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid state.
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom05">
-          <Form.Label>Zip</Form.Label>
-          <Form.Control type="text" placeholder="Zip" required />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid zip.
-          </Form.Control.Feedback>
-        </Form.Group>
-      </Row>
-      <Row className="mb-3">
-      <Form.Group as={Col} md="4" controlId="barter">
-      <Form.Label>Barter? If so mark this box</Form.Label>
-        <Form.Check
-          required
 
-          // style={{position: "inherit"}}
-        />
-      </Form.Group>
-      <Form.Group as={Col} md="3" controlId="validationAmount">
+      </Row>
+      <Row className="mb-3">
+
+        <Form.Group as={Col} md="6" controlId="validationAmount">
           <Form.Label>Amount</Form.Label>
           <InputGroup hasValidation>
             <InputGroup.Text id="inputGroupPrepend">$</InputGroup.Text>
@@ -104,22 +74,87 @@ export default function Expenses() {
               required
             />
             <Form.Control.Feedback type="invalid">
-              Please choose a username.
+              Please choose a valid amount.
             </Form.Control.Feedback>
           </InputGroup>
         </Form.Group>
-        <DatePicker
-              isClearable
 
-              onChange={val => {
-                setStartDate(val);
-               
-              }}
-              
+        <Form.Group as={Col} md="6" controlId="validationQuantity">
+          <Form.Label>Quantity</Form.Label>
+          <InputGroup hasValidation>
+            <Form.Control
+              type="number"
+              placeholder="1"
+              aria-describedby="inputGroupPrepend"
+              required
             />
+            <Form.Control.Feedback type="invalid">
+              Please choose a valid quantity.
+            </Form.Control.Feedback>
+          </InputGroup>
+        </Form.Group>
+        <Form.Group as={Col} md="6" controlId="validationUnitMeasure">
+          <Form.Label>Unit Measure</Form.Label>
+          <Form.Select defaultValue="Choose...">
+            <option>oz.</option>
+            <option>gal.</option>
+            <option value="1">lb.</option>
+            <option>cubic yard</option>
+            <option>cubic foot</option>
+            <option value="1">per each</option>
+            <option value="1">Other...Please add in Description</option>
+          </Form.Select>
+        </Form.Group>
 
-        
-     
+        <Form.Group as={Col} md="6" controlId="validationBarter">
+          <Form.Label>Barter?</Form.Label>
+          <Form.Select defaultValue="Choose...">
+            <option>No</option>
+            <option>Yes</option>
+
+          </Form.Select>
+        </Form.Group>
+
+        <Form.Group as={Col} md="6" controlId="validationUnitMeasure">
+          <Form.Label>Tax Rate?</Form.Label>
+          <Form.Select defaultValue="Choose...">
+            <option>5%</option>
+            <option>8%</option>
+            <option>0%</option>
+
+          </Form.Select>
+        </Form.Group>
+
+
+
+        <Form.Group as={Col} md="6" controlId="validationUnitMeasure">
+          <Form.Label>Unit Measure</Form.Label>
+          <InputGroup hasValidation>
+
+            <Form.Control
+              type="text"
+              placeholder=""
+              aria-describedby="inputGroupPrepend"
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              Please
+            </Form.Control.Feedback>
+          </InputGroup>
+        </Form.Group>
+      </Row>
+      <Row>
+
+        <Form.Group as={Col} md="3" controlId="barter">
+          <span>
+
+
+            <Form.Label>If  ☑️ </Form.Label><Form.Check /></span>
+
+        </Form.Group>
+
+
+
 
       </Row>
       <Button type="submit">Submit form</Button>

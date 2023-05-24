@@ -29,7 +29,11 @@ export default function Bar(props) {
       <Link to="/newnon">
         <h1>New Inventory Item</h1>
       </Link>
+      <Link to="/newacct">
+        <h1>New Create New Account</h1>
+      </Link>
 </Nav>
+
 </Container>
 </Navbar>
 </>

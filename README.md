@@ -78,6 +78,25 @@ import Input from 'react-phone-number-input/input'
 </Form.Group>
 ```
 
+### Email Input
+
+```js
+ <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+        </Form.Group>
+
+```
+
+### Password Input
+
+```js
+<Form.Group as={Col} controlId="formGridPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" />
+</Form.Group>
+
+```
 ### `npm start`
 
 Runs the app in the development mode.\

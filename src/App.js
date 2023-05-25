@@ -9,6 +9,7 @@ import Expenses from './pages/Expenses'
 import NewPlantInventoryItem from './pages/NewPlantInventoryItem'
 import NewNonPlantInventoryItem from './pages/NewNonPlantInventoryItem'
 import NewAccount from './pages/NewAccount';
+import NewPatient from './pages/NewPatient';
 import Table from './pages/Table'
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
@@ -72,6 +73,7 @@ function App() {
             <Route path="/newplant" element={<NewPlantInventoryItem />} />
             <Route path="/newnon" element={<NewNonPlantInventoryItem />} />
             <Route path="/newacct" element={<NewAccount />} />
+            <Route path="/newpt" element={<NewPatient />} />
           </Routes>
         </BrowserRouter>
         </>

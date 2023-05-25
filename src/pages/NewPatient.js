@@ -3,12 +3,12 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
-export default function NewAccountReceivable() {
+export default function NewPatient() {
   return (
     <Form>
       <Row className="mb-3">
       <Form.Group as={Col} controlId="formGridName">
-          <Form.Label>Business Name</Form.Label>
+          <Form.Label>Name</Form.Label>
           <Form.Control type="text" placeholder="Enter Name" />
         </Form.Group>
 
@@ -54,10 +54,43 @@ export default function NewAccountReceivable() {
       </Row>
 
       <Row>
-      <Form.Group as={Col} controlId="formGridName">
-          <Form.Label>Business Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter Name" />
+      <Form.Group as={Col} controlId="formGridID">
+          <Form.Label>ID Type</Form.Label>
+          <Form.Select defaultValue="Choose...">
+            <option>Drivers License</option>
+            <option>State Issued ID</option>
+            <option value="1">US Passport</option>
+            <option value="1">Green Card</option>
+          </Form.Select>
         </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridIDState">
+          <Form.Label>ID Issuing State</Form.Label>
+          <Form.Control type="string" placeholder="PhoformDridIDState"/>
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridIDNumber">
+          <Form.Label>ID Issuing State</Form.Label>
+          <Form.Control type="string" placeholder="Enter ID including all slashes"/>
+        </Form.Group>
+
+      
+      </Row>
+
+      <Row>
+    
+
+        <Form.Group as={Col} controlId="formGridIDState">
+          <Form.Label>Med Card State</Form.Label>
+          <Form.Control type="string" placeholder="PhoformDridIDState"/>
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridIDNumber">
+          <Form.Label>Med Card ID </Form.Label>
+          <Form.Control type="string" placeholder="Enter ID including all slashes"/>
+        </Form.Group>
+
+      
       </Row>
 
       <Button variant="primary" type="submit">

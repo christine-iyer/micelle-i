@@ -3,14 +3,15 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+
 export default function Bar(props) {
   return (
     <>
-    <Navbar bg="dark" variant="dark">
+    <Navbar  bsStyle="tabs" className="navbar-left" bg="light" variant="light" width='100%'>
       <Container>
-    <Nav className="nav">
+    <Nav >
       <Link to="/">
-        <h1>Homepage</h1>
+        <h1>Inventory</h1>
       </Link>
      
       <Link to="/revenue">
@@ -27,13 +28,13 @@ export default function Bar(props) {
       </Link>
    
       <Link to="/newnon">
-        <h1>New Inventory Item</h1>
+        <h1>New Inventory</h1>
       </Link>
       <Link to="/newacct">
-        <h1>Create New Account</h1>
+        <h1>New Account</h1>
       </Link>
       <Link to="/newpt">
-        <h1>Create New Patient</h1>
+        <h1>New Patient</h1>
       </Link>
 </Nav>
 

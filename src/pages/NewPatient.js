@@ -26,6 +26,7 @@ export default function NewPatient() {
       }
   return (
     <Form>
+      <h1>New Patients</h1>
       <Row className="mb-3">
       <Form.Group as={Col} controlId="formGridName">
           <Form.Label>Name</Form.Label>
@@ -156,7 +157,7 @@ export default function NewPatient() {
                 {url && (
                     <div key={url._id} className='card' style={{ width: '18rem' }}
                     >
-                        <image variant="top" src={url}id="uploadedimage" ></image>
+                        <img variant="top" src={url}id="uploadedimage" ></img>
                         <p className="url">{url}</p>
                     </div>
                 )}

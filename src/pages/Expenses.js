@@ -24,8 +24,9 @@ export default function Expenses() {
 
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
+      <h1>Enter New Purchase</h1>
       <Row className="mb-3">
-        <Form.Group as={Col} md="5" controlId="validationCustom01">
+        <Form.Group as={Col} md="4" controlId="validationCustom01">
           <Form.Label>Pay to the Order of</Form.Label>
           <Form.Control
             required
@@ -33,8 +34,8 @@ export default function Expenses() {
             placeholder="Account Name" />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="5" controlId="validationDescription">
-          <Form.Label>Description </Form.Label>
+        <Form.Group as={Col} md="4" controlId="validationDescription">
+          <Form.Label>Description of Item or Service</Form.Label>
           <Form.Control
             required
             type="text"
@@ -44,26 +45,8 @@ export default function Expenses() {
       </Row>
 
       <Row className="mb-3">
-        <Form.Group as={Col} md="11" controlId="validationCustomUsername">
-          <Form.Label>Address</Form.Label>
-          <InputGroup hasValidation>
-            {/* <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text> */}
-            <Form.Control
-              type="text"
-              placeholder="Address"
-              aria-describedby="inputGroupPrepend"
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Please enter full ailimg address.
-            </Form.Control.Feedback>
-          </InputGroup>
-        </Form.Group>
 
-      </Row>
-      <Row className="mb-3">
-
-        <Form.Group as={Col} md="6" controlId="validationAmount">
+        <Form.Group as={Col} md="2" controlId="validationAmount">
           <Form.Label>Amount</Form.Label>
           <InputGroup hasValidation>
             <InputGroup.Text id="inputGroupPrepend">$</InputGroup.Text>
@@ -79,7 +62,7 @@ export default function Expenses() {
           </InputGroup>
         </Form.Group>
 
-        <Form.Group as={Col} md="6" controlId="validationQuantity">
+        <Form.Group as={Col} md="1" controlId="validationQuantity">
           <Form.Label>Quantity</Form.Label>
           <InputGroup hasValidation>
             <Form.Control
@@ -93,7 +76,7 @@ export default function Expenses() {
             </Form.Control.Feedback>
           </InputGroup>
         </Form.Group>
-        <Form.Group as={Col} md="6" controlId="validationUnitMeasure">
+        <Form.Group as={Col} md="2" controlId="validationUnitMeasure">
           <Form.Label>Unit Measure</Form.Label>
           <Form.Select defaultValue="Choose...">
             <option>oz.</option>
@@ -106,7 +89,7 @@ export default function Expenses() {
           </Form.Select>
         </Form.Group>
 
-        <Form.Group as={Col} md="6" controlId="validationBarter">
+        <Form.Group as={Col} md="2" controlId="validationBarter">
           <Form.Label>Barter?</Form.Label>
           <Form.Select defaultValue="Choose...">
             <option>No</option>
@@ -115,8 +98,8 @@ export default function Expenses() {
           </Form.Select>
         </Form.Group>
 
-        <Form.Group as={Col} md="6" controlId="validationUnitMeasure">
-          <Form.Label>Tax Rate?</Form.Label>
+        <Form.Group as={Col} md="1" controlId="validationUnitMeasure">
+          <Form.Label>Tax </Form.Label>
           <Form.Select defaultValue="Choose...">
             <option>5%</option>
             <option>8%</option>
@@ -127,36 +110,9 @@ export default function Expenses() {
 
 
 
-        <Form.Group as={Col} md="6" controlId="validationUnitMeasure">
-          <Form.Label>Unit Measure</Form.Label>
-          <InputGroup hasValidation>
-
-            <Form.Control
-              type="text"
-              placeholder=""
-              aria-describedby="inputGroupPrepend"
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Please
-            </Form.Control.Feedback>
-          </InputGroup>
-        </Form.Group>
+        
       </Row>
-      <Row>
 
-        <Form.Group as={Col} md="3" controlId="barter">
-          <span>
-
-
-            <Form.Label>If  ☑️ </Form.Label><Form.Check /></span>
-
-        </Form.Group>
-
-
-
-
-      </Row>
       <Button type="submit">Submit form</Button>
     </Form>
   );

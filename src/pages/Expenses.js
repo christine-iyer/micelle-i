@@ -6,10 +6,50 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import "react-datepicker/dist/react-datepicker.css";
+import { FormControl } from "@mui/material";
 
 export default function Expenses() {
   const [validated, setValidated] = useState(false);
-  // const [startDate, setStartDate] = useState('');
+  const [expense, setExpense] = useState({
+    accountPayable: '',
+    itemDescription: '',
+    itemAmount: '',
+    itemQuantity: '',
+    unitMeasure: '',
+    barter: '',
+    salesTax: ''
+})
+const handleChange = (event) => {
+  setExpense({ ...expense, [event.target.name]: event.target.value })
+}
+
+const [expenses, setExpenses] = useState([])
+
+const createExpense = async () => {
+  try {
+      const response = await fetch('/api/expenses', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ ...expense })
+      })
+      const data = await response.json()
+      setExpenses([data, ...expenses])
+  } catch (error) {
+      console.error(error)
+  } finally {
+      setExpense({
+        accountPayable: '',
+        itemDescription: '',
+        itemAmount: '',
+        itemQuantity: '',
+        unitMeasure: '',
+        barter: '',
+        salesTax: ''
+      })
+  }
+}
 
 
   const handleSubmit = (event) => {
@@ -30,6 +70,7 @@ export default function Expenses() {
           <Form.Label>Pay to the Order of</Form.Label>
           <Form.Control
             required
+            onChange={handleChange}
             type="text"
             placeholder="Account Name" />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -37,6 +78,7 @@ export default function Expenses() {
         <Form.Group as={Col} md="4" controlId="validationDescription">
           <Form.Label>Description of Item or Service</Form.Label>
           <Form.Control
+           onChange={handleChange}
             required
             type="text"
             placeholder="Provide a brief description of the receipt" />
@@ -51,6 +93,7 @@ export default function Expenses() {
           <InputGroup hasValidation>
             <InputGroup.Text id="inputGroupPrepend">$</InputGroup.Text>
             <Form.Control
+             onChange={handleChange}
               type="text"
               placeholder="00.00"
               aria-describedby="inputGroupPrepend"
@@ -66,6 +109,7 @@ export default function Expenses() {
           <Form.Label>Quantity</Form.Label>
           <InputGroup hasValidation>
             <Form.Control
+             onChange={handleChange}
               type="number"
               placeholder="1"
               aria-describedby="inputGroupPrepend"
@@ -78,7 +122,22 @@ export default function Expenses() {
         </Form.Group>
         <Form.Group as={Col} md="2" controlId="validationUnitMeasure">
           <Form.Label>Unit Measure</Form.Label>
-          <Form.Select defaultValue="Choose...">
+
+          <Form.Control
+                                as='select'
+                                type='text'
+                                name='unitMeasure'
+
+                                onChange={handleChange}>
+                                <option value="oz.">oz.</option>
+                                <option value="gal">gal</option>
+                                <option value="lb">lb</option>
+                                <option value="cubicYard">cubic yard</option>
+                                <option value="cubicFoot">cubic foot</option>
+                                <option value="each">each</option>
+                                <option value="other">other</option>
+                            </Form.Control>
+          {/* <Form.Select defaultValue="Choose...">
             <option>oz.</option>
             <option>gal.</option>
             <option value="1">lb.</option>
@@ -86,7 +145,8 @@ export default function Expenses() {
             <option>cubic foot</option>
             <option value="1">per each</option>
             <option value="1">Other...Please add in Description</option>
-          </Form.Select>
+          </Form.Select> */}
+
         </Form.Group>
 
         <Form.Group as={Col} md="2" controlId="validationBarter">
@@ -100,12 +160,18 @@ export default function Expenses() {
 
         <Form.Group as={Col} md="1" controlId="validationUnitMeasure">
           <Form.Label>Tax </Form.Label>
-          <Form.Select defaultValue="Choose...">
-            <option>5%</option>
-            <option>8%</option>
-            <option>0%</option>
+          <Form.Control
+                                as='select'
+                                type='text'
+                                name='unitMeasure'
 
-          </Form.Select>
+                                onChange={handleChange}>
+                                <option value="five">5%</option>
+                                <option value="eight">8%</option>
+                                <option value="none">0%</option>
+                                
+                            </Form.Control>
+
         </Form.Group>
 
 

@@ -31,10 +31,11 @@ const Styles = styled.div`
       }
 
       input {
-        font-size: 1rem;
+        font-size:2rem;
         padding: 0;
         margin: 0;
         border: 0;
+        color: "blue";
       }
     }
   }
@@ -116,7 +117,7 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
   // Render the UI for your table
   return (
     <>
-      <table {...getTableProps()}>
+      <table className='table' {...getTableProps()}>
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>

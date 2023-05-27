@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 export default function Bar(props) {
   return (
     <>
-    <Navbar  bsStyle="tabs" className="navbar-left" bg="light" variant="light" width='100%'>
+    <Navbar  className="navbar-left" bg="light" variant="light" width='100%'>
       <Container>
     <Nav >
       <Link to="/">

@@ -37,12 +37,13 @@ Form {
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: rgb(141,108,111);
   color: ghostwhite;
   width: 100vw;
   float: left;
   padding: 1fr;
+  margin: 1fr;
   
 }
 .nav a {

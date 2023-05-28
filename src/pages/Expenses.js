@@ -16,7 +16,7 @@ export default function Expenses() {
     itemAmount: '',
     itemQuantity: '',
     unitMeasure: '',
-    barter: '',
+    barter: false,
     salesTax: ''
 })
 const handleChange = (event) => {
@@ -121,6 +121,7 @@ const updateExpense = async (id, updatedData) => {
           <Form.Label>Pay to the Order of</Form.Label>
           <Form.Control
             required
+            value={expense.accountPayable}
             onChange={handleChange}
             type="text"
             placeholder="Account Name" />
@@ -130,6 +131,7 @@ const updateExpense = async (id, updatedData) => {
           <Form.Label>Description of Item or Service</Form.Label>
           <Form.Control
            onChange={handleChange}
+           value={expense.itemDescription}
             required
             type="text"
             placeholder="Provide a brief description of the receipt" />
@@ -145,6 +147,7 @@ const updateExpense = async (id, updatedData) => {
             <InputGroup.Text id="inputGroupPrepend">$</InputGroup.Text>
             <Form.Control
              onChange={handleChange}
+             value={expense.itemAmount}
               type="text"
               placeholder="00.00"
               aria-describedby="inputGroupPrepend"
@@ -160,11 +163,12 @@ const updateExpense = async (id, updatedData) => {
           <Form.Label>Quantity</Form.Label>
           <InputGroup hasValidation>
             <Form.Control
+                 value={expense.itemQuantity} 
              onChange={handleChange}
-              type="number"
-              placeholder="1"
-              aria-describedby="inputGroupPrepend"
-              required
+       
+              type="string"
+             
+              
             />
             <Form.Control.Feedback type="invalid">
               Please choose a valid quantity.
@@ -178,6 +182,7 @@ const updateExpense = async (id, updatedData) => {
                                 as='select'
                                 type='text'
                                 name='unitMeasure'
+                                value={expense.unitMeasure}
 
                                 onChange={handleChange}>
                                 <option value="oz.">oz.</option>
@@ -202,11 +207,18 @@ const updateExpense = async (id, updatedData) => {
 
         <Form.Group as={Col} md="2" controlId="validationBarter">
           <Form.Label>Barter?</Form.Label>
-          <Form.Select defaultValue="Choose...">
+          {/* <Form.Select defaultValue="Choose...">
             <option>No</option>
             <option>Yes</option>
 
-          </Form.Select>
+          </Form.Select> */}
+          <Form.Control
+             onChange={handleChange}
+             value={expense.barter}
+              type= "boolean"
+              
+              required
+            />
         </Form.Group>
 
         <Form.Group as={Col} md="1" controlId="validationUnitMeasure">

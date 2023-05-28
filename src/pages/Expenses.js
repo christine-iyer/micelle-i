@@ -50,7 +50,58 @@ const createExpense = async () => {
       })
   }
 }
+const listExpenses = async () => {
+  try {
+      const response = await fetch('/api/users/expenses', {
+          method: 'GET',
+          headers: {
+              'Content-Type': 'application/json',
+        
+          }
+      })
+      const data = await response.json()
+      setExpenses(data)
+  } catch (error) {
+      console.error(error)
+  }
+}
+const deletedExpense = async (id) => {
+  try {
+      const response = await fetch(`/api/expenses/${id}`, {
+          method: 'DELETE',
+          headers: {
+              'Content-Type': 'application/json',
 
+          }
+      })
+      const data = await response.json()
+      const expensesCopy = [...expenses]
+      const index = expensesCopy.findIndex(expense => id === expense.id)
+      expensesCopy.splice(index, 1)
+      setExpenses(expensesCopy)
+  } catch (error) {
+      console.error(error)
+  }
+}
+const updateExpense = async (id, updatedData) => {
+  try {
+      const response = await fetch(`/api/expenses/${id}`, {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/json',
+
+          },
+          body: JSON.stringify(updatedData)
+      })
+      const data = await response.json()
+      const expensesCopy = [...expenses]
+      const index = expensesCopy.findIndex(expense => id === expense.id)
+      expensesCopy[index] = { ...expensesCopy[index], ...updatedData }
+      setExpenses(expensesCopy)
+  } catch (error) {
+      console.error(error)
+  }
+}
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;

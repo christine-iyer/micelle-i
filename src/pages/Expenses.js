@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import DatePicker from "react-datepicker";
+
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import "react-datepicker/dist/react-datepicker.css";
-import { FormControl } from "@mui/material";
+
 
 export default function Expenses() {
   const [validated, setValidated] = useState(false);
@@ -120,19 +120,17 @@ const updateExpense = async (id, updatedData) => {
         <Form.Group as={Col} md="4" controlId="validationCustom01">
           <Form.Label>Pay to the Order of</Form.Label>
           <Form.Control
-            required
-            value={expense.accountPayable}
+            value={expenses.accountPayable}
             onChange={handleChange}
             type="text"
-            placeholder="Account Name" />
+            placeholder="Account Payable" />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationDescription">
           <Form.Label>Description of Item or Service</Form.Label>
           <Form.Control
            onChange={handleChange}
-           value={expense.itemDescription}
-            required
+           value={expenses.itemDescription}
             type="text"
             placeholder="Provide a brief description of the receipt" />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -147,11 +145,10 @@ const updateExpense = async (id, updatedData) => {
             <InputGroup.Text id="inputGroupPrepend">$</InputGroup.Text>
             <Form.Control
              onChange={handleChange}
-             value={expense.itemAmount}
-              type="text"
-              placeholder="00.00"
+              type="number"
+              placeholder= "0.00"
               aria-describedby="inputGroupPrepend"
-              required
+              value={expenses.itemAmount}
             />
             <Form.Control.Feedback type="invalid">
               Please choose a valid amount.
@@ -163,10 +160,12 @@ const updateExpense = async (id, updatedData) => {
           <Form.Label>Quantity</Form.Label>
           <InputGroup hasValidation>
             <Form.Control
-                 value={expense.itemQuantity} 
+            value={expenses.itemQuantity}
+
              onChange={handleChange}
        
-              type="string"
+              type="number"
+              placeholder="1"
              
               
             />
@@ -182,7 +181,7 @@ const updateExpense = async (id, updatedData) => {
                                 as='select'
                                 type='text'
                                 name='unitMeasure'
-                                value={expense.unitMeasure}
+                                value={expenses.unitMeasure}
 
                                 onChange={handleChange}>
                                 <option value="oz.">oz.</option>
@@ -207,18 +206,30 @@ const updateExpense = async (id, updatedData) => {
 
         <Form.Group as={Col} md="2" controlId="validationBarter">
           <Form.Label>Barter?</Form.Label>
-          {/* <Form.Select defaultValue="Choose...">
-            <option>No</option>
-            <option>Yes</option>
+          {/* <Form.Check  type="radio"
+          defaultValue="Choose...">
+         
 
-          </Form.Select> */}
+          </Form.Check >
           <Form.Control
              onChange={handleChange}
-             value={expense.barter}
+             value={expenses.barter}
+
               type= "boolean"
               
-              required
-            />
+              
+            /> */}
+
+<Form.Check type="radio" >
+            <Form.Check.Input type="radio" isValid />
+            <Form.Check.Label>Check</Form.Check.Label>
+            <Form.Control.Feedback type="valid">
+              You did it!
+            </Form.Control.Feedback>
+          </Form.Check>
+
+
+            
         </Form.Group>
 
         <Form.Group as={Col} md="1" controlId="validationUnitMeasure">

@@ -131,8 +131,7 @@ const updateExpense = async (id, updatedData) => {
           <Form.Control
            onChange={handleChange}
            value={expenses.itemDescription}
-            type="text"
-            placeholder="Provide a brief description of the receipt" />
+            type="text"/>
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
       </Row>
@@ -144,11 +143,11 @@ const updateExpense = async (id, updatedData) => {
           <InputGroup hasValidation>
             <InputGroup.Text id="inputGroupPrepend">$</InputGroup.Text>
             <Form.Control
-             onChange={handleChange}
-              type="number"
-              placeholder= "0.00"
+             
+              type="text"
               aria-describedby="inputGroupPrepend"
               value={expenses.itemAmount}
+              onChange={handleChange}
             />
             <Form.Control.Feedback type="invalid">
               Please choose a valid amount.
@@ -165,7 +164,7 @@ const updateExpense = async (id, updatedData) => {
              onChange={handleChange}
        
               type="number"
-              placeholder="1"
+             
              
               
             />
@@ -182,8 +181,9 @@ const updateExpense = async (id, updatedData) => {
                                 type='text'
                                 name='unitMeasure'
                                 value={expenses.unitMeasure}
-
-                                onChange={handleChange}>
+                                onChange={handleChange}
+                                option={expenses.unitMeasure}
+                              >
                                 <option value="oz.">oz.</option>
                                 <option value="gal">gal</option>
                                 <option value="lb">lb</option>
@@ -206,38 +206,31 @@ const updateExpense = async (id, updatedData) => {
 
         <Form.Group as={Col} md="2" controlId="validationBarter">
           <Form.Label>Barter?</Form.Label>
-          {/* <Form.Check  type="radio"
-          defaultValue="Choose...">
+
+          <Form.Check  type="checkbox"
+          inline
+          value={expenses.barter}
+          onChange={handleChange}>
          
 
           </Form.Check >
-          <Form.Control
-             onChange={handleChange}
-             value={expenses.barter}
+          {/* <Form.Control
+             
+             value={expenses.barter}/> */}
 
-              type= "boolean"
-              
-              
-            /> */}
 
-<Form.Check type="radio" >
-            <Form.Check.Input type="radio" isValid />
-            <Form.Check.Label>Check</Form.Check.Label>
-            <Form.Control.Feedback type="valid">
-              You did it!
-            </Form.Control.Feedback>
-          </Form.Check>
 
 
             
         </Form.Group>
 
-        <Form.Group as={Col} md="1" controlId="validationUnitMeasure">
+        <Form.Group as={Col} md="1" controlId="validationTax">
           <Form.Label>Tax </Form.Label>
           <Form.Control
                                 as='select'
                                 type='text'
-                                name='unitMeasure'
+                                name='tax'
+                                value={expenses.salesTax}
 
                                 onChange={handleChange}>
                                 <option value="five">5%</option>

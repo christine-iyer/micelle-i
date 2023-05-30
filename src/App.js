@@ -68,8 +68,9 @@ function App() {
           <Bar />
           <Routes>
             <Route path="/" element={<Table />}/>
-            <Route path="/revenue" element={<Revenue />} />
             <Route path="/expenses" element={<Expenses />} />
+            <Route path="/revenue" element={<Revenue />} />
+            
             <Route path="/newplant" element={<NewPlantInventoryItem />} />
             <Route path="/newnon" element={<NewNonPlantInventoryItem />} />
             <Route path="/newacct" element={<NewAccount />} />

@@ -4,7 +4,7 @@ const expenseSchema = new Schema({
     accountPayable: { type: String, required: true },
     itemDescription: {type: String},
     itemAmount: { type: Number },
-    itemQuantity: { type: String },
+    itemQuantity: { type: Number },
     unitMeasure: {type: String},
     barter: { type: Boolean },
     salesTax: { type: String },

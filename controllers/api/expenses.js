@@ -30,7 +30,7 @@ const createExpense = async (req, res, next) => {
         // const user = await User.findOne({ email: res.locals.data.email })
         // user.expenses.addToSet(createdExpense)
         // await user.save()
-        console.log(createExpense)
+       
         res.locals.data.expense = createdExpense
         next()
     } catch (error) {

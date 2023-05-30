@@ -24,7 +24,7 @@
   align-items:flex-start;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: green;
   padding: 13rem;
  
 }
@@ -42,7 +42,7 @@ Form {
   list-style-type: none;
   justify-content: space-between;
   background-color: rgb(141,108,111);
-  color: ghostwhite;
+  color: green;
   width: 100vw;
   float: left;
   padding: 1fr;

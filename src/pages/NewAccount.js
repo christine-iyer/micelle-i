@@ -203,7 +203,7 @@
 
 import { useState, useEffect } from 'react'
 
-export default function Expenses (){
+export default function NewAccts (){
 
   const [newaccts, setNewaccts] = useState([])
   const [foundNewacct, setFoundNewacct] = useState(null)
@@ -215,10 +215,19 @@ export default function Expenses (){
     city: '',
     state: '',
     zip: '',
-    description: ''
+    description: '',
+    licenseNum: '',
+    licenseSt: '',
+    medCardSt: '',
+    dlLiscUrl: '',
+    medCardUrl: ''
     })
+    const handleChange = (evt) => {
+    setNewacct({ ...newacct, [evt.target.name]: evt.target.value })
+  }
+    
     // index
-    const getExpenses = async () => {
+    const getNewAccts = async () => {
         try {
             const response = await fetch('/api/newaccts')
             const data = await response.json()
@@ -228,7 +237,7 @@ export default function Expenses (){
         }
     }
     // delete
-    const deleteExpense = async (id) => {
+    const deleteNewAcct = async (id) => {
         try {
             const response = await fetch(`/api/newaccts/${id}`, {
                 method: "DELETE",
@@ -243,7 +252,7 @@ export default function Expenses (){
         }
     }
     // update
-    const updateExpense = async (id, updatedData) => {
+    const updateNewAcct = async (id, updatedData) => {
         try {
             const response = await fetch(`/api/newaccts/${id}`, {
                 method: "PUT",
@@ -259,7 +268,7 @@ export default function Expenses (){
         }
     }
     // create
-        const createExpense = async () => {
+        const createNewAcct = async () => {
             try {
                 const response = await fetch(`/api/newaccts`, {
                     method: "POST",
@@ -271,26 +280,28 @@ export default function Expenses (){
                 const data = await response.json()
                 setFoundNewacct(data)
                 setNewacct({
-                  name: '',
-                  email: '',
-                  phone: '',
-                  address: '',
-                  city: '',
-                  state: '',
-                  zip: '',
-                  description: ''
+                    name: '',
+                    email: '',
+                    phone: '',
+                    address: '',
+                    city: '',
+                    state: '',
+                    zip: '',
+                    description: '',
+                    licenseNum: '',
+                    licenseSt: '',
+                    medCardSt: '',
+                    dlLiscUrl: '',
+                    medCardUrl: ''
                 })
             } catch (error) {
                 console.error(error)
             }
         }
 
-    const handleChange = (evt) => {
-        setNewacct({...newacct, [evt.target.name]: evt.target.value})
-    }
 
     useEffect(()=> {
-        getExpenses()
+        getNewAccts()
     }, [foundNewacct])
 
     return (
@@ -301,54 +312,39 @@ export default function Expenses (){
                         newaccts.map((newacct) => {
                             return (
                                 <li key={newacct._id}>
-                                    {newacct.accountPayable} is {newacct.unitMeasure} {newacct.barter? 'Barter' : 'Cash'}
-                                    <br/><button onClick={() => deleteExpense(newacct._id)}>X</button>
+                                    {newacct.name} is {newacct.unitMeasure} {newacct.barter? 'Barter' : 'Cash'}
+                                    <br/><button onClick={() => deleteNewAcct(newacct._id)}>X</button>
                                 </li>
                             )
                         })
                     }
-                </ul>): <h1>No Expenses Yet Add One Below</h1>
+                </ul>): <h1>No NewAccts Yet Add One Below</h1>
             }
-            {'Account Payable '}<input value={newacct.accountPayable} onChange={handleChange} name="accountPayable"></input><br/>
-            {'Description '}<input value={newacct.itemDescription} onChange={handleChange} name="itemDescription"></input><br/>
-            {'Quantity '}<input type="number" checked={newacct.itemQuantity} onChange={handleChange}></input><br/>
-            {'Item Amount '}<input value={newacct.itemAmount} onChange={handleChange} name="itemAmount"></input><br/>
-            {'Unit Measure '} 
-            <select 
-            value={newacct.unitMeasure} 
-            onChange={handleChange} 
-            name="unitMeasure">
-           <option value="oz.">oz.</option>
-           <option value="gal">gal</option>
-           <option value="lb">lb</option>
-           <option value="cubicYard">cubic yard</option>
-           <option value="cubicFoot">cubic foot</option>
-           <option value="each">each</option>
-           <option value="other">other</option>
-              
-              
-              </select><br/>
-            {'Barter '}
-            <input type="checkbox" checked={newacct.barter} onChange={(evt) => setNewacct({...newacct, barter: evt.target.checked })}></input><br/>
-            {'Sales Tax '}
-            <select 
-            value={newacct.salesTax} 
-            onChange={handleChange} 
-            name="salesTax">
-              <option value="5%">5%</option>
-           <option value="8%">8%</option>
-           <option value="0">0</option>
-
-              
-              </select><br/>
-            <button onClick={() => createExpense() }>Create A New Expense</button>
+            {'New Account Payable '}<input value={newacct.name} onChange={handleChange} name="name"></input><br/>
+            {'Email '}<input value={newacct.email} onChange={handleChange} name="email"></input><br/>
+            {'Phone '}<input value={newacct.phone} onChange={handleChange} name="phone"></input><br/>
+            {'Address '}<input value={newacct.address} onChange={handleChange} name="address"></input><br/>
+            {'City '}<input value={newacct.city} onChange={handleChange} name="city"></input><br/>
+            {'State '}<input value={newacct.state} onChange={handleChange} name="state"></input><br/>
+            {'Zip '}<input value={newacct.zip} onChange={handleChange} name="zip"></input><br/>
+            {'Description '}<input value={newacct.description} onChange={handleChange} name="description"></input><br/>
+            {'DL State '}<input value={newacct.licenseSt} onChange={handleChange} name="licenseSt"></input><br/>
+            {'Zip '}<input value={newacct.medCardSt} onChange={handleChange} name="medCardSt"></input><br/>
+            {'Description '}<input value={newacct.description} onChange={handleChange} name="description"></input><br/>
+            
+           
+            <button onClick={() => createNewAcct() }>Create A New NewAcct</button>
             {
                 foundNewacct? <div>
-                    <h1>{foundNewacct.accountPayable}</h1>
-                    <h2>{foundNewacct.itemDescription}</h2>
-                    <h3>{foundNewacct.barter? 'Barter Customer': 'I will pay cash'}</h3>
-                    <span>{foundNewacct.itemQuantity} {foundNewacct.salesTax} {foundNewacct.itemDescription} {foundNewacct.unitMeasure}</span>
-                </div>: <>No Expense in Found Expense State</>
+                     <h2>{foundNewacct.name}</h2>
+                    <h2>{foundNewacct.email}</h2>
+                    <h2>{foundNewacct.phone}</h2>
+                    <h2>{foundNewacct.address}</h2>
+                    <h2>{foundNewacct.city}</h2>
+                    <h2>{foundNewacct.state}</h2>
+                    <h2>{foundNewacct.zip}</h2>
+                    <h2>{foundNewacct.description}</h2>
+                </div>: <>No New Accounts Found </>
             }
         
             

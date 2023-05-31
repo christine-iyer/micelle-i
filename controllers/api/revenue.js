@@ -1,54 +1,56 @@
 require('dotenv').config()
-const Bookmark = require('../../models/bookmark')
-const User = require('../../models/user')
+const Revenue = require('../../models/revenue')
 
 
-// delete bookmark
-// create bookmark
-// update bookmark
 
-const destroyBookmark = async (req, res, next) => {
+
+const destroyRevenue = async (req, res, next) => {
     try {
-        const deletedBookmark = await Bookmark.findByIdAndDelete(req.params.id)
-        res.locals.data.bookmark = deletedBookmark
+        const deletedRevenue = await Revenue.findByIdAndDelete(req.params.id)
+        res.locals.data.revenue = deletedRevenue
         next()
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }
 }
 
-const updateBookmark = async (req, res, next) => {
+const updateRevenue = async (req, res, next) => {
     try {
-        const updatedBookmark = await Bookmark.findByIdAndUpdate(req.params.id, req.body, { new: true })
-        res.locals.data.bookmark = updatedBookmark
+        const updatedRevenue = await Revenue.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        res.locals.data.revenue = updatedRevenue
         next()
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }
 }
 
-const createBookmark = async (req, res, next) => {
+const createRevenue = async (req, res, next) => {
     try {
-        const createdBookmark = await Bookmark.create(req.body)
-        const user = await User.findOne({ email: res.locals.data.email })
-        user.bookmarks.addToSet(createdBookmark)
-        await user.save()
-        res.locals.data.bookmark = createdBookmark
+        const createdRevenue = await Revenue.create(req.body)
+        // const user = await User.findOne({ email: res.locals.data.email })
+        // user.revenues.addToSet(createdRevenue)
+        // await user.save()
+       
+        res.locals.data.revenue = createdRevenue
         next()
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }
 }
 
-const respondWithBookmark = (req, res) => {
-    res.json(res.locals.data.bookmark)
+const respondWithRevenues = (req, res) => {
+    res.json(res.locals.data.revenues)
+}
+const respondWithRevenue = (req, res) => {
+    res.json(res.locals.data.revenue)
 }
 
 
 
 module.exports = {
-    destroyBookmark,
-    updateBookmark,
-    createBookmark,
-    respondWithBookmark
+    destroyRevenue,
+    updateRevenue,
+    createRevenue,
+    respondWithRevenues,
+    respondWithRevenue
 }

@@ -1,24 +1,23 @@
 const router = require('express').Router()
-const bookmarkCtrl = require('../../controllers/api/bookmarks')
-const checkToken = require('../../config/checkToken')
-const ensureLoggedIn = require('../../config/ensureLoggedIn')
+const revenueCtrl = require('../../controllers/api/revenue')
 
-/* /api/Bookmarks/:id
+
+/* /api/Revenues/:id
 DELETE
-destroy bookmark
+destroy revenue
 */
-router.delete('/:id', checkToken, ensureLoggedIn, bookmarkCtrl.destroyBookmark, bookmarkCtrl.respondWithBookmark)
+router.delete('/:id', revenueCtrl.destroyRevenue, revenueCtrl.respondWithRevenue)
 /*
-/api/Bookmarks/:id
+/api/Revenues/:id
 PUT
-update bookmark
+update revenue
 */
-router.put('/:id', checkToken, ensureLoggedIn, bookmarkCtrl.updateBookmark, bookmarkCtrl.respondWithBookmark)
+router.put('/:id', revenueCtrl.updateRevenue, revenueCtrl.respondWithRevenue)
 /*
-/api/Bookmarks
+/api/Revenues
 POST
-create bookmark
+create revenue
 */
-router.post('/', checkToken, ensureLoggedIn, bookmarkCtrl.createBookmark, bookmarkCtrl.respondWithBookmark)
-
+router.post('/', revenueCtrl.createRevenue, revenueCtrl.respondWithRevenue)
+router.get('/revenues', revenueCtrl.respondWithRevenues, revenueCtrl.respondWithRevenues)
 module.exports = router

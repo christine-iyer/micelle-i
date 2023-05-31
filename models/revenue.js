@@ -1,13 +1,18 @@
 const { Schema, model } = require('mongoose')
 
-const bookmarkSchema = new Schema({
-    title: { type: String, required: true },
-    category: {type: String},
-    image: { type: String },
-    body: { type: String }
+const revenueSchema = new Schema({
+    accountReceivable: { type: String, required: true },
+    strain: {type: String},
+    itemCategory: { type: String },
+    itemDescription: { type: String }, 
+    itemAmount: { type: Number },
+    itemQuantity: { type: Number },
+    unitMeasure: {type: String},
+    barter: { type: Boolean },
+    salesTax: { type: String },
 }, {
     timestamps: true
 })
 
 
-module.exports = model('Bookmark', bookmarkSchema)
+module.exports = model('Revenue', revenueSchema)

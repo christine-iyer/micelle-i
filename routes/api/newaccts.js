@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const newacctCtrl = require('../../controllers/api/newacct')
+const newacctCtrl = require('../../controllers/api/newaccts')
 
 
 /* /api/Newaccts/:id

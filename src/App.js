@@ -73,7 +73,7 @@ function App() {
             
             <Route path="/newplant" element={<NewPlantInventoryItem />} />
             <Route path="/newnon" element={<NewNonPlantInventoryItem />} />
-            <Route path="/newacct" element={<NewAccount />} />
+            <Route path="/newaccts" element={<NewAccount />} />
             <Route path="/newpt" element={<NewPatient />} />
           </Routes>
         </BrowserRouter>

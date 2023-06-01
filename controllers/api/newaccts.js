@@ -1,5 +1,5 @@
 require('dotenv').config()
-const Newacct = require('../../models/newacct')
+const Newacct = require('../../models/newaccts')
 
 
 

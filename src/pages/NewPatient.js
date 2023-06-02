@@ -101,7 +101,7 @@ export default function NewPatient() {
 
 
   const [url, updateUrl] = useState("https://lolo.com");
-  const [urlMC, updateUrlMC] = useState("https://lolo.com");
+  const [urlMC, updateUrlMC] = useState("https://bean.com");
   const [error, updateError] = useState();
   function handleOnUpload(error, result, widget) {
     if (error) {
@@ -181,7 +181,7 @@ function handleOnUploadMC(error, result, widget) {
         </div>
       )}
 
-<UploadWidget onUpload={handleOnUpload}>
+<UploadWidget onUpload={handleOnUploadMC}>
         {({ open }) => {
           function handleOnClick(e) {
             e.preventDefault();

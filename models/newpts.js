@@ -9,11 +9,10 @@ const newptSchema = new Schema({
     state: { type: String },
     zip: { type: String },
     description: { type: String }, 
-    licenseNum: { type: String, required: true },
-    licenseSt: {type: String},
-    medCardSt: { type: String },
-    dlLiscUrl: { type: String } ,
-    medCardUrl: { type: String } 
+    idType: { type: String, required: true },
+    idState: {type: String},
+    medCardState: { type: String },
+    images: [{ type: String }] 
 
 }, {
     timestamps: true

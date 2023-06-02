@@ -30,10 +30,10 @@ export default function Bar(props) {
       <Link to="/newnon">
         <h1>New Inventory</h1>
       </Link>
-      <Link to="/newacct">
+      <Link to="/newaccts">
         <h1>New Account</h1>
       </Link>
-      <Link to="/newpt">
+      <Link to="/newpts">
         <h1>New Patient</h1>
       </Link>
 </Nav>

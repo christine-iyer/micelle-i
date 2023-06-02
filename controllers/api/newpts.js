@@ -1,5 +1,5 @@
 require('dotenv').config()
-const NewPt = require('../../models/newpt')
+const NewPt = require('../../models/newpts')
 
 
 

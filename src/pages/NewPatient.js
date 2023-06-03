@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Cloudinary } from "@cloudinary/url-gen";
 import UploadWidget from '../components/MicroComponents/UploadWidget';
+import imageHolder from '../components/MicroComponents/placeholder.png'
 
 export default function NewPatient() {
   const [newpts, setNewpts] = useState([])
@@ -17,7 +18,7 @@ export default function NewPatient() {
     idType: '',
     idState: '',
     medCardState: '',
-    images: []
+    images: ''
   })
   const handleChange = (evt) => {
     setNewpt({ ...newpt, [evt.target.name]: evt.target.value })
@@ -88,7 +89,7 @@ export default function NewPatient() {
         idType: '',
         idState: '',
         medCardState: '',
-        images: []
+        images: ''
 
 
       })
@@ -103,7 +104,7 @@ export default function NewPatient() {
   }, [foundNewpt])
 
 
-  const [url, updateUrl] = useState("https://lolo.com");
+  const [url, updateUrl] = useState(false);
  
   const [error, updateError] = useState();
   function handleOnUpload(error, result, widget) {
@@ -155,7 +156,7 @@ export default function NewPatient() {
       {url && (
         <div key={url._id} className='card' style={{ width: '18rem' }}
         >
-          <img variant="top" src={url} id="uploadedimage" ></img>
+          <img variant="top"  src={url} id="uploadedimage"  ></img>
           <p className="url">{url}</p>
         </div>
       )}
@@ -175,12 +176,13 @@ export default function NewPatient() {
         value={newpt.idType}
         onChange={handleChange}
         name="idType">
+          <option value="Driver's License">Select One ...</option>
         <option value="Driver's License">Driver's License</option>
         <option value="State ID">State ID</option>
         <option value="US Passport">US Passport</option>
         <option value="Green Card">Creen Card</option>
       </select><br />
-      {'ID Image '}<input value={url} onChange={handleChange} name="dlUrl"></input><br />
+      {'ID Image '}<input value={url} onChange={handleChange} name="url"></input><br />
       
 
 

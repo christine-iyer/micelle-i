@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Cloudinary } from "@cloudinary/url-gen";
-import UploadWidget from '../components/MicroComponents/UploadWidget';
 
 export default function NewItem() {
-  const [newitems, setNewitems] = useState([])
-  const [foundNewitem, setFoundNewitem] = useState(null)
-  const [newitem, setNewitem] = useState({
+  const [inventorys, setInventorys] = useState([])
+  const [foundNewInventory, setFoundNewInventory] = useState(null)
+  const [inventory, setNewInventory] = useState({
     name: '',
     strain: '',
     description: '',
@@ -20,42 +18,41 @@ export default function NewItem() {
     plantOrigin: '',
     plantOriginDate: '',
     plantStage: '', 
-    itemId: '', 
-    image: ''
+    itemId: ''
   })
   const handleChange = (evt) => {
-    setNewitem({ ...newitem, [evt.target.name]: evt.target.value })
+    setNewInventory({ ...inventory, [evt.target.name]: evt.target.value })
   }
 
   // index
-  const getNewitems = async () => {
+  const getNewInventorys = async () => {
     try {
-      const response = await fetch('/api/newitems')
+      const response = await fetch('/api/inventorys')
       const data = await response.json()
-      setNewitems(data)
+      setInventorys(data)
     } catch (error) {
       console.error(error)
     }
   }
   // delete
-  const deleteNewitem = async (id) => {
+  const deleteNewInventory = async (id) => {
     try {
-      const response = await fetch(`/api/newitems/${id}`, {
+      const response = await fetch(`/api/inventorys/${id}`, {
         method: "DELETE",
         headers: {
           'Content-Type': 'application/json'
         }
       })
       const data = await response.json()
-      setFoundNewitem(data)
+      setFoundNewInventory(data)
     } catch (error) {
       console.error(error)
     }
   }
   // update
-  const updateNewitem = async (id, updatedData) => {
+  const updateNewInventory = async (id, updatedData) => {
     try {
-      const response = await fetch(`/api/newitems/${id}`, {
+      const response = await fetch(`/api/inventorys/${id}`, {
         method: "PUT",
         headers: {
           'Content-Type': 'application/json'
@@ -63,24 +60,24 @@ export default function NewItem() {
         body: JSON.stringify({ ...updatedData })
       })
       const data = await response.json()
-      setFoundNewitem(data)
+      setFoundNewInventory(data)
     } catch (error) {
       console.error(error)
     }
   }
   // create
-  const createNewitem = async () => {
+  const createNewInventory = async () => {
     try {
-      const response = await fetch(`/api/newitems`, {
+      const response = await fetch(`/api/inventorys`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ ...newitem })
+        body: JSON.stringify({ ...inventory })
       })
       const data = await response.json()
-      setFoundNewitem(data)
-      setNewitem({
+      setFoundNewInventory(data)
+      setNewInventory({
         name: '',
         strain: '',
         description: '',
@@ -94,9 +91,7 @@ export default function NewItem() {
         newPlant: '',
         plantOrigin: '',
         plantOriginDate: '',
-        plantStage: '', 
-        itemId: '', 
-        image: ''
+        plantStage: ''
 
       })
     } catch (error) {
@@ -106,8 +101,8 @@ export default function NewItem() {
 
 
   useEffect(() => {
-    getNewitems()
-  }, [foundNewitem])
+    getNewInventorys()
+  }, [foundNewInventory])
 
 
   const [url, updateUrl] = useState(false);
@@ -124,7 +119,7 @@ export default function NewItem() {
     console.dir(result);
     updateUrl(result?.info?.secure_url);
     console.dir(url);
-    setNewitem({
+    setNewInventory({
       name: '',
       strain: '',
       description: '',
@@ -138,17 +133,14 @@ export default function NewItem() {
       newPlant: '',
       plantOrigin: '',
       plantOriginDate: '',
-      plantStage: '', 
-      itemId: '', 
-      image: '',
-    image: result?.info?.secure_url
+      plantStage: ''
 
   })
 }
 
   return (
     <>
-    <UploadWidget onUpload={handleOnUpload}>
+    {/* <UploadWidget onUpload={handleOnUpload}>
         {({ open }) => {
           function handleOnClick(e) {
             e.preventDefault();
@@ -170,12 +162,12 @@ export default function NewItem() {
           <img variant="top"  src={url} id="uploadedimage"  ></img>
           <p className="url">{url}</p>
         </div>
-      )}
+      )} */}
 
 
-      {'New Item Name'}<input value={newitem.name} onChange={handleChange} name="name"></input><br />
+      {'New Item Name'}<input value={inventory.name} onChange={handleChange} name="name"></input><br />
       {'Strain '}<select
-        value={newitem.strain}
+        value={inventory.strain}
         onChange={handleChange}
         name="strain">
           <option value="Select">Select One ...</option>
@@ -186,7 +178,7 @@ export default function NewItem() {
       </select><br />
 
       {'Product Category '}<select
-        value={newitem.productCategory}
+        value={inventory.productCategory}
         onChange={handleChange}
         name="productCategory">
           <option value="Select">Select One ...</option>
@@ -196,7 +188,7 @@ export default function NewItem() {
       </select><br />
 
       {'Inventory Name '}<select
-        value={newitem.inventoryName}
+        value={inventory.inventoryName}
         onChange={handleChange}
         name="inventoryName">
         <option value="Select">Select One ...</option>
@@ -224,7 +216,7 @@ export default function NewItem() {
       </select><br />
       {'Unit Measure '}
       <select
-        value={newitem.unitMeasure}
+        value={inventory.unitMeasure}
         onChange={handleChange}
         name="unitMeasure">
         <option value="oz.">oz.</option>
@@ -238,12 +230,12 @@ export default function NewItem() {
 
 
 
-      {'Units on Hand '}<input value={newitem.unitOnHand} type='number' onChange={handleChange} name="unitOnHand"></input><br />
-      {'Unit Cost '}<input value={newitem.unitCost} onChange={handleChange} name="unitCost"></input><br />
-      {'Target Quantity '}<input value={newitem.targetQuantity} type='number' onChange={handleChange} name="targetQuantity"></input><br />
-      {'New Plant '}<input value={newitem.newPlant} onChange={handleChange} name="newPlant"></input><br />
+      {'Units on Hand '}<input value={inventory.unitOnHand} type='number' onChange={handleChange} name="unitOnHand"></input><br />
+      {'Unit Cost '}<input value={inventory.unitCost} onChange={handleChange} name="unitCost"></input><br />
+      {'Target Quantity '}<input value={inventory.targetQuantity} type='number' onChange={handleChange} name="targetQuantity"></input><br />
+      {'New Plant '}<input value={inventory.newPlant} onChange={handleChange} name="newPlant"></input><br />
       {'Plant Origin '}      <select
-        value={newitem.plantOrigin}
+        value={inventory.plantOrigin}
         onChange={handleChange}
         name="plantOrigin">
           <option value="Select">Select</option>
@@ -256,9 +248,9 @@ export default function NewItem() {
 
 
 
-      {'Plant Origin Date '}<input value={newitem.plantOriginDate} onChange={handleChange} name="plantOriginDate"></input><br />
+      {'Plant Origin Date '}<input value={inventory.plantOriginDate} onChange={handleChange} name="plantOriginDate"></input><br />
       {'Plant Stage '}<select
-        value={newitem.plantStage}
+        value={inventory.plantStage}
         onChange={handleChange}
         name="plantStage">
           <option value="Select">Select One ...</option>
@@ -270,24 +262,24 @@ export default function NewItem() {
       {'ID Image '}<input value={url} onChange={handleChange} name="url"></input><br />
       
 
-<button onClick={() => createNewitem()}>Create A New Newitem</button>
+<button onClick={() => createNewInventory()}>Create A New NewInventory</button>
       {
-        foundNewitem ? <div>
-          <h2>{foundNewitem.name}</h2>
-          <h2>{foundNewitem.strain}</h2>
-          <h2>{foundNewitem.productCategory}</h2>
-          <h2>{foundNewitem.inventoryName}</h2>
-          <h2>{foundNewitem.itemDetail}</h2>
-          <h2>{foundNewitem.unitMeasure}</h2>
-          <h2>{foundNewitem.unitMeasure}</h2>
-          <h2>{foundNewitem.unitOnHand}</h2>
-          <h2>{foundNewitem.unitCost}</h2>
-          <h2>{foundNewitem.targetQuantity}</h2>
-          <h2>{foundNewitem.newPlant}</h2>
-          <h2>{foundNewitem.plantOrigin}</h2>
-          <h2>{foundNewitem.plantOriginDate}</h2>
-          <h2>{foundNewitem.plantStage}</h2>
-          <h2>{foundNewitem.image}</h2>
+        foundNewInventory ? <div>
+          <h2>{foundNewInventory.name}</h2>
+          <h2>{foundNewInventory.strain}</h2>
+          <h2>{foundNewInventory.productCategory}</h2>
+          <h2>{foundNewInventory.inventoryName}</h2>
+          <h2>{foundNewInventory.itemDetail}</h2>
+          <h2>{foundNewInventory.unitMeasure}</h2>
+          <h2>{foundNewInventory.unitMeasure}</h2>
+          <h2>{foundNewInventory.unitOnHand}</h2>
+          <h2>{foundNewInventory.unitCost}</h2>
+          <h2>{foundNewInventory.targetQuantity}</h2>
+          <h2>{foundNewInventory.newPlant}</h2>
+          <h2>{foundNewInventory.plantOrigin}</h2>
+          <h2>{foundNewInventory.plantOriginDate}</h2>
+          <h2>{foundNewInventory.plantStage}</h2>
+          <h2>{foundNewInventory.image}</h2>
 
         </div> : <>No New Accounts Found </>
       }

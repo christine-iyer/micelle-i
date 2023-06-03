@@ -11,7 +11,7 @@ export default function Bar(props) {
       <Container>
     <Nav >
       <Link to="/">
-        <h1>Inventory</h1>
+        <h1>Table</h1>
       </Link>
      
       <Link to="/revenue">
@@ -23,13 +23,10 @@ export default function Bar(props) {
         <h1>Expense</h1>
       </Link>
  
-      <Link to="/newplant">
-        <h1>New Plant</h1>
-      </Link>
-   
-      <Link to="/newnon">
+      <Link to="/inventory">
         <h1>New Inventory</h1>
       </Link>
+   
       <Link to="/newaccts">
         <h1>New Account</h1>
       </Link>

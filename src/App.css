@@ -17,7 +17,7 @@
 }
 
 .App-header {
-  background-color: rgb(203, 166, 160);
+  background-color: rgb(133, 199, 192);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
 Form {
   width: 90%;
   border-style:groove;
-  border-color: forestgreen;
+  border-color: red;
   padding: 1fr;
   margin: 1fr;
 }
@@ -55,4 +55,8 @@ Form {
   flex-direction: row;
 }
 .Navbar{ justify-content: flex-end;}
+
+input {
+  width: 30%;
+}
 

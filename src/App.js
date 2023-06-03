@@ -4,11 +4,10 @@ import ReactDOM from "react-dom/client";
 import styled from 'styled-components'
 // import { useTable, usePagination } from 'react-table'
 import './App.css';
+import NewAccount from './pages/NewAccount'
 import Revenue from './pages/Revenue'
 import Expenses from './pages/Expenses'
-import NewPlantInventoryItem from './pages/NewPlantInventoryItem'
-import NewNonPlantInventoryItem from './pages/NewNonPlantInventoryItem'
-import NewAccount from './pages/NewAccount';
+import InventoryItem from './pages/InventoryItem'
 import NewPatient from './pages/NewPatient';
 import Table from './pages/Table'
 import { Routes, Route, BrowserRouter } from "react-router-dom";
@@ -23,11 +22,11 @@ function App() {
         Header: 'Name',
         columns: [
           {
-            Header: 'First Name',
+            Header: 'Category',
             accessor: 'firstName',
           },
           {
-            Header: 'Last Name',
+            Header: 'Item',
             accessor: 'lastName',
           },
         ],
@@ -36,19 +35,19 @@ function App() {
         Header: 'Info',
         columns: [
           {
-            Header: 'Age',
+            Header: 'Unit Measure',
             accessor: 'age',
           },
           {
-            Header: 'Visits',
+            Header: 'Strain',
             accessor: 'visits',
           },
           {
-            Header: 'Status',
+            Header: 'Type',
             accessor: 'status',
           },
           {
-            Header: 'Profile Progress',
+            Header: 'Units on Hand',
             accessor: 'progress',
           },
         ],
@@ -71,8 +70,8 @@ function App() {
             <Route path="/expenses" element={<Expenses />} />
             <Route path="/revenue" element={<Revenue />} />
             
-            <Route path="/newplant" element={<NewPlantInventoryItem />} />
-            <Route path="/newnon" element={<NewNonPlantInventoryItem />} />
+            <Route path="/inventory" element={<InventoryItem />} />
+           
             <Route path="/newaccts" element={<NewAccount />} />
             <Route path="/newpts" element={<NewPatient />} />
           </Routes>

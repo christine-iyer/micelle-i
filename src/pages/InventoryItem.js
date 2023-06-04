@@ -6,7 +6,6 @@ export default function NewItem() {
   const [inventory, setNewInventory] = useState({
     name: '',
     strain: '',
-    description: '',
     productCategory: '',
     inventoryName: '',
     itemDetail: '',
@@ -17,8 +16,7 @@ export default function NewItem() {
     newPlant: '',
     plantOrigin: '',
     plantOriginDate: '',
-    plantStage: '', 
-    itemId: ''
+    plantStage: ''
   })
   const handleChange = (evt) => {
     setNewInventory({ ...inventory, [evt.target.name]: evt.target.value })
@@ -80,7 +78,7 @@ export default function NewItem() {
       setNewInventory({
         name: '',
         strain: '',
-        description: '',
+  
         productCategory: '',
         inventoryName: '',
         itemDetail: '',
@@ -122,7 +120,7 @@ export default function NewItem() {
     setNewInventory({
       name: '',
       strain: '',
-      description: '',
+
       productCategory: '',
       inventoryName: '',
       itemDetail: '',
@@ -259,7 +257,7 @@ export default function NewItem() {
         <option value="Flowering">Flowering</option>
         <option value="Harvest">Harvest</option>
       </select><br />
-      {'ID Image '}<input value={url} onChange={handleChange} name="url"></input><br />
+
       
 
 <button onClick={() => createNewInventory()}>Create A New NewInventory</button>
@@ -279,7 +277,7 @@ export default function NewItem() {
           <h2>{foundNewInventory.plantOrigin}</h2>
           <h2>{foundNewInventory.plantOriginDate}</h2>
           <h2>{foundNewInventory.plantStage}</h2>
-          <h2>{foundNewInventory.image}</h2>
+   
 
         </div> : <>No New Accounts Found </>
       }

@@ -37,10 +37,14 @@ const createItem = async (req, res, next) => {
         res.status(400).json({ msg: error.message })
     }
 }
-
 const respondWithItem = (req, res) => {
     res.json(res.locals.data.item)
 }
+
+const respondWithItems = (req, res) => {
+    res.json(res.locals.data.items)
+}
+
 
 
 
@@ -48,5 +52,6 @@ module.exports = {
     destroyItem,
     updateItem,
     createItem,
-    respondWithItem
+    respondWithItem, 
+    respondWithItems
 }

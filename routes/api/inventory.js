@@ -18,6 +18,7 @@ router.put('/:id', itemCtrl.updateItem, itemCtrl.respondWithItem)
 POST
 create expense
 */
-router.post('/inventory', itemCtrl.createItem, itemCtrl.respondWithItem)
+router.post('/', itemCtrl.createItem, itemCtrl.respondWithItem)
+router.get('/inventorys', itemCtrl.respondWithItems, itemCtrl, itemCtrl.respondWithItems)
 
 module.exports = router

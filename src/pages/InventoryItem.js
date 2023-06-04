@@ -13,7 +13,7 @@ export default function NewItem() {
     unitOnHand: '', 
     unitCost: '',
     targetQuantity: '',
-    newPlant: '',
+    newPlant: false,
     plantOrigin: '',
     plantOriginDate: '',
     plantStage: ''
@@ -86,7 +86,7 @@ export default function NewItem() {
         unitOnHand: '', 
         unitCost: '',
         targetQuantity: '',
-        newPlant: '',
+        newPlant: 'false',
         plantOrigin: '',
         plantOriginDate: '',
         plantStage: ''

@@ -14,7 +14,7 @@ export default function Bar(props) {
         <h1>Table</h1>
       </Link>
      
-      <Link to="/revenues">
+      <Link to="/revenue">
         <h1>Revenue</h1>
       </Link>
      
@@ -23,7 +23,7 @@ export default function Bar(props) {
         <h1>Expense</h1>
       </Link>
  
-      <Link to="/inventorys">
+      <Link to="/inventory">
         <h1>New Inventory</h1>
       </Link>
    

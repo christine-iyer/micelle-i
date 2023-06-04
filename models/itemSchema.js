@@ -12,7 +12,7 @@ const itemSchema = new Schema({
     targetQuantity: { type: Number }, 
     newPlant: { type: Boolean }, 
     plantOrigin: { type: String, required: true },
-    plantOriginDate: {type: String},
+    plantOriginDate: {type: Date},
     plantStage: { type: String }, 
     imageURL: {type: String }
 }, {

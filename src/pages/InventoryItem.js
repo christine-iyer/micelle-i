@@ -219,6 +219,7 @@ export default function NewItem() {
         value={inventory.unitMeasure}
         onChange={handleChange}
         name="unitMeasure">
+           <option value="Select">Select</option>
         <option value="oz.">oz.</option>
         <option value="gal">gal</option>
         <option value="lb">lb</option>
@@ -248,7 +249,7 @@ export default function NewItem() {
 
 
 
-      {'Plant Origin Date '}<input value={inventory.plantOriginDate} onChange={handleChange} name="plantOriginDate"></input><br />
+      {'Plant Origin Date '}<input type='date' value={inventory.plantOriginDate} onChange={handleChange} name="plantOriginDate"></input><br />
       {'Plant Stage '}<select
         value={inventory.plantStage}
         onChange={handleChange}

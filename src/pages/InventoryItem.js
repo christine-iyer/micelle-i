@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { Cloudinary } from "@cloudinary/url-gen";
+import UploadWidget from '../components/MicroComponents/UploadWidget';
 
 export default function NewItem() {
   const [inventorys, setInventorys] = useState([])
@@ -10,9 +12,9 @@ export default function NewItem() {
     inventoryName: '',
     itemDetail: '',
     unitMeasure: '',
-    unitOnHand: '', 
-    unitCost: '',
-    targetQuantity: '',
+    unitOnHand: 0, 
+    unitCost: 10.99,
+    targetQuantity: 0,
     newPlant: false,
     plantOrigin: '',
     plantOriginDate: '',
@@ -83,10 +85,10 @@ export default function NewItem() {
         inventoryName: '',
         itemDetail: '',
         unitMeasure: '',
-        unitOnHand: '', 
-        unitCost: '',
-        targetQuantity: '',
-        newPlant: 'false',
+        unitOnHand: 0, 
+    unitCost: 10.99,
+    targetQuantity: 0,
+    newPlant: false,
         plantOrigin: '',
         plantOriginDate: '',
         plantStage: ''
@@ -125,10 +127,10 @@ export default function NewItem() {
       inventoryName: '',
       itemDetail: '',
       unitMeasure: '',
-      unitOnHand: '', 
-      unitCost: '',
-      targetQuantity: '',
-      newPlant: '',
+      unitOnHand: 0, 
+    unitCost: 10.99,
+    targetQuantity: 0,
+    newPlant: false,
       plantOrigin: '',
       plantOriginDate: '',
       plantStage: ''
@@ -231,7 +233,7 @@ export default function NewItem() {
       {'Units on Hand '}<input value={inventory.unitOnHand} type='number' onChange={handleChange} name="unitOnHand"></input><br />
       {'Unit Cost '}<input value={inventory.unitCost} onChange={handleChange} name="unitCost"></input><br />
       {'Target Quantity '}<input value={inventory.targetQuantity} type='number' onChange={handleChange} name="targetQuantity"></input><br />
-      {'New Plant '}<input value={inventory.newPlant} onChange={handleChange} name="newPlant"></input><br />
+      {'New Plant '}<input type='checkbox' checked={inventory.newPlant} onChange={handleChange} name="newPlant"></input><br />
       {'Plant Origin '}      <select
         value={inventory.plantOrigin}
         onChange={handleChange}

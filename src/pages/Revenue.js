@@ -128,7 +128,7 @@ export default function Revenues() {
         <option value="Consultation">Consultation</option>
       </select><br />
       {'Description '}<input value={newRevenue.itemDescription} onChange={handleChange} name="itemDescription"></input><br />
-      {'Quantity '}<input type="number" checked={newRevenue.itemQuantity} onChange={handleChange} name="itemQuantity"></input><br />
+      {'Quantity '}<input type="number" value={newRevenue.itemQuantity} onChange={handleChange} name="itemQuantity"></input><br />
       {'Item Amount '}<input value={newRevenue.itemAmount} onChange={handleChange} name="itemAmount"></input><br />
       {'Unit Measure '}
       <select

@@ -277,6 +277,10 @@ export default function NewItem() {
           <h2>{foundNewInventory.targetQuantity}</h2>
           <h2>{foundNewInventory.newPlant}</h2>
           <h2>{foundNewInventory.plantOrigin}</h2>
+
+          
+
+
           <h2>{`${foundNewInventory.plantOriginDate.toLocaleString().replace(/T.*/,'').split('/').join('.')}`}</h2>
           <h2>{foundNewInventory.plantStage}</h2>
 

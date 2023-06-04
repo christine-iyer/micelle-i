@@ -68,9 +68,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Table />}/>
             <Route path="/expenses" element={<Expenses />} />
-            <Route path="/revenue" element={<Revenue />} />
+            <Route path="/revenues" element={<Revenue />} />
             
-            <Route path="/inventory" element={<InventoryItem />} />
+            <Route path="/inventorys" element={<InventoryItem />} />
            
             <Route path="/newaccts" element={<NewAccount />} />
             <Route path="/newpts" element={<NewPatient />} />

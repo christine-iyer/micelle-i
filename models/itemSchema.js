@@ -11,10 +11,9 @@ const itemSchema = new Schema({
     unitCost: {type: Number},
     targetQuantity: { type: Number }, 
     newPlant: { type: Boolean }, 
-    plantOrigin: { type: String, required: true },
+    plantOrigin: { type: String },
     plantOriginDate: {type: Date},
-    plantStage: { type: String }, 
-    imageURL: {type: String }
+    plantStage: { type: String }
 }, {
     timestamps: true
 })

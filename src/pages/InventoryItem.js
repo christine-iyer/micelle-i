@@ -5,23 +5,23 @@ import UploadWidget from '../components/MicroComponents/UploadWidget';
 export default function NewItem() {
   const [inventorys, setInventorys] = useState([])
   const [foundNewInventory, setFoundNewInventory] = useState(null)
-  const [inventory, setNewInventory] = useState({
+  const [newInventory, setNewInventory] = useState({
     name: '',
     strain: '',
     productCategory: '',
     inventoryName: '',
     itemDetail: '',
     unitMeasure: '',
-    unitOnHand: 0, 
+    unitOnHand: 1,
     unitCost: 10.99,
-    targetQuantity: 0,
+    targetQuantity: 1,
     newPlant: false,
     plantOrigin: '',
     plantOriginDate: '',
     plantStage: ''
   })
   const handleChange = (evt) => {
-    setNewInventory({ ...inventory, [evt.target.name]: evt.target.value })
+    setNewInventory({ ...newInventory, [evt.target.name]: evt.target.value })
   }
 
   // index
@@ -73,26 +73,24 @@ export default function NewItem() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ ...inventory })
+        body: JSON.stringify({ ...newInventory })
       })
       const data = await response.json()
       setFoundNewInventory(data)
       setNewInventory({
         name: '',
         strain: '',
-  
         productCategory: '',
         inventoryName: '',
         itemDetail: '',
         unitMeasure: '',
-        unitOnHand: 0, 
-    unitCost: 10.99,
-    targetQuantity: 0,
-    newPlant: false,
+        unitOnHand: 0,
+        unitCost: 10.99,
+        targetQuantity: 0,
+        newPlant: false,
         plantOrigin: '',
         plantOriginDate: '',
         plantStage: ''
-
       })
     } catch (error) {
       console.error(error)
@@ -106,41 +104,39 @@ export default function NewItem() {
 
 
   const [url, updateUrl] = useState(false);
- 
+
   const [error, updateError] = useState();
-  function handleOnUpload(error, result, widget) {
-    if (error) {
-      updateError(error);
-      widget.close({
-        quiet: true
-      });
-      return;
-    }
-    console.dir(result);
-    updateUrl(result?.info?.secure_url);
-    console.dir(url);
-    setNewInventory({
-      name: '',
-      strain: '',
-
-      productCategory: '',
-      inventoryName: '',
-      itemDetail: '',
-      unitMeasure: '',
-      unitOnHand: 0, 
-    unitCost: 10.99,
-    targetQuantity: 0,
-    newPlant: false,
-      plantOrigin: '',
-      plantOriginDate: '',
-      plantStage: ''
-
-  })
-}
+  // function handleOnUpload(error, result, widget) {
+  //   if (error) {
+  //     updateError(error);
+  //     widget.close({
+  //       quiet: true
+  //     });
+  //     return;
+  //   }
+  //   console.dir(result);
+  //   updateUrl(result?.info?.secure_url);
+  //   console.dir(url);
+  //   setNewInventory({
+  //     name: '',
+  //     strain: '',
+  //     productCategory: '',
+  //     inventoryName: '',
+  //     itemDetail: '',
+  //     unitMeasure: '',
+  //     unitOnHand: 0,
+  //     unitCost: 10.99,
+  //     targetQuantity: 0,
+  //     newPlant: false,
+  //     plantOrigin: '',
+  //     plantOriginDate: '',
+  //     plantStage: ''
+  //   })
+  // }
 
   return (
     <>
-    {/* <UploadWidget onUpload={handleOnUpload}>
+      {/* <UploadWidget onUpload={handleOnUpload}>
         {({ open }) => {
           function handleOnClick(e) {
             e.preventDefault();
@@ -165,12 +161,12 @@ export default function NewItem() {
       )} */}
 
 
-      {'New Item Name'}<input value={inventory.name} onChange={handleChange} name="name"></input><br />
+      {'New Item Name'}<input value={newInventory.name} onChange={handleChange} name="name"></input><br />
       {'Strain '}<select
-        value={inventory.strain}
+        value={newInventory.strain}
         onChange={handleChange}
         name="strain">
-          <option value="Select">Select One ...</option>
+        <option value="Select">Select One ...</option>
         <option value="Hybrid">Hybrid</option>
         <option value="Sativa">Sativa</option>
         <option value="Indica">Indica</option>
@@ -178,17 +174,17 @@ export default function NewItem() {
       </select><br />
 
       {'Product Category '}<select
-        value={inventory.productCategory}
+        value={newInventory.productCategory}
         onChange={handleChange}
         name="productCategory">
-          <option value="Select">Select One ...</option>
+        <option value="Select">Select One ...</option>
         <option value="Supplies-Plant Growth">Supplies-Plant Growth</option>
         <option value="Product Formulation Supplies">Product Formulation Supplies</option>
         <option value="Products Available for Sale">Products Available for Sale</option>
       </select><br />
 
       {'Inventory Name '}<select
-        value={inventory.inventoryName}
+        value={newInventory.inventoryName}
         onChange={handleChange}
         name="inventoryName">
         <option value="Select">Select One ...</option>
@@ -214,12 +210,14 @@ export default function NewItem() {
         <option value="Topicals">Topicals</option>
         <option value="Marshmallows">Marshmallows</option>
       </select><br />
+      {'Inventory Item Detail'}<input value={newInventory.itemDetail} onChange={handleChange} name="itemDetail"></input><br />
+
       {'Unit Measure '}
       <select
-        value={inventory.unitMeasure}
+        value={newInventory.unitMeasure}
         onChange={handleChange}
         name="unitMeasure">
-           <option value="Select">Select</option>
+        <option value="Select">Select</option>
         <option value="oz.">oz.</option>
         <option value="gal">gal</option>
         <option value="lb">lb</option>
@@ -231,39 +229,41 @@ export default function NewItem() {
 
 
 
-      {'Units on Hand '}<input value={inventory.unitOnHand} type='number' onChange={handleChange} name="unitOnHand"></input><br />
-      {'Unit Cost '}<input value={inventory.unitCost} onChange={handleChange} name="unitCost"></input><br />
-      {'Target Quantity '}<input value={inventory.targetQuantity} type='number' onChange={handleChange} name="targetQuantity"></input><br />
-      {'New Plant '}<input type='checkbox' checked={inventory.newPlant} onChange={handleChange} name="newPlant"></input><br />
+      {'Units on Hand '}<input value={newInventory.unitOnHand} type='number' onChange={handleChange} name="unitOnHand"></input><br />
+      {'Unit Cost '}<input type="number" value={newInventory.unitCost} onChange={handleChange} name="unitCost"></input><br />
+      {'Target Quantity '}<input value={newInventory.targetQuantity} type='number' onChange={handleChange} name="targetQuantity"></input><br />
+      {'New Plant '}<input type='checkbox' checked={newInventory.newPlant} 
+      onChange={(evt) => setNewInventory({ ...newInventory, newPlant: evt.target.checked })}
+       name="newPlant"></input><br />
       {'Plant Origin '}      <select
-        value={inventory.plantOrigin}
+        value={newInventory.plantOrigin}
         onChange={handleChange}
         name="plantOrigin">
-          <option value="Select">Select</option>
+        <option value="Select">Select</option>
         <option value="Seed">Seed</option>
         <option value="Clone">Clone</option>
         <option value="Mature Plant">Mature Plant</option>
-        
-        
+
+
       </select><br />
 
 
 
-      {'Plant Origin Date '}<input type='date' value={inventory.plantOriginDate} onChange={handleChange} name="plantOriginDate"></input><br />
+      {'Plant Origin Date '}<input type='date' value={newInventory.plantOriginDate} onChange={handleChange} name="plantOriginDate"></input><br />
       {'Plant Stage '}<select
-        value={inventory.plantStage}
+        value={newInventory.plantStage}
         onChange={handleChange}
         name="plantStage">
-          <option value="Select">Select One ...</option>
+        <option value="Select">Select One ...</option>
         <option value="Seedling">Seedling</option>
         <option value="Vegetative">Vegetative</option>
         <option value="Flowering">Flowering</option>
         <option value="Harvest">Harvest</option>
       </select><br />
 
-      
 
-<button onClick={() => createNewInventory()}>Create A New NewInventory</button>
+
+      <button onClick={() => createNewInventory()}>Create A New NewInventory</button>
       {
         foundNewInventory ? <div>
           <h2>{foundNewInventory.name}</h2>
@@ -272,15 +272,14 @@ export default function NewItem() {
           <h2>{foundNewInventory.inventoryName}</h2>
           <h2>{foundNewInventory.itemDetail}</h2>
           <h2>{foundNewInventory.unitMeasure}</h2>
-          <h2>{foundNewInventory.unitMeasure}</h2>
           <h2>{foundNewInventory.unitOnHand}</h2>
           <h2>{foundNewInventory.unitCost}</h2>
           <h2>{foundNewInventory.targetQuantity}</h2>
           <h2>{foundNewInventory.newPlant}</h2>
           <h2>{foundNewInventory.plantOrigin}</h2>
-          <h2>{foundNewInventory.plantOriginDate}</h2>
+          <h2>{`${foundNewInventory.plantOriginDate.toLocaleString().replace(/T.*/,'').split('/').join('.')}`}</h2>
           <h2>{foundNewInventory.plantStage}</h2>
-   
+
 
         </div> : <>No New Accounts Found </>
       }

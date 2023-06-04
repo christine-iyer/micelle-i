@@ -37,14 +37,13 @@ const createItem = async (req, res, next) => {
         res.status(400).json({ msg: error.message })
     }
 }
-const respondWithItem = (req, res) => {
-    res.json(res.locals.data.item)
-}
 
 const respondWithItems = (req, res) => {
     res.json(res.locals.data.items)
 }
-
+const respondWithItem = (req, res) => {
+    res.json(res.locals.data.item)
+}
 
 
 

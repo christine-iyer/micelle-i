@@ -107,7 +107,7 @@ export default function Revenues() {
           }
         </ul>) : <h1>No Revenues Yet Add One Below</h1>
       }
-      {'Account Payable '}<input value={newRevenue.accountReceivable} onChange={handleChange} name="accountReceivable"></input><br />
+      {'Account Receivable '}<input value={newRevenue.accountReceivable} onChange={handleChange} name="accountReceivable"></input><br />
       {'Strain '}
       <select
         value={newRevenue.strain}
@@ -128,7 +128,7 @@ export default function Revenues() {
         <option value="Consultation">Consultation</option>
       </select><br />
       {'Description '}<input value={newRevenue.itemDescription} onChange={handleChange} name="itemDescription"></input><br />
-      {'Quantity '}<input type="number" checked={newRevenue.itemQuantity} onChange={handleChange}></input><br />
+      {'Quantity '}<input type="number" checked={newRevenue.itemQuantity} onChange={handleChange} name="itemQuantity"></input><br />
       {'Item Amount '}<input value={newRevenue.itemAmount} onChange={handleChange} name="itemAmount"></input><br />
       {'Unit Measure '}
       <select

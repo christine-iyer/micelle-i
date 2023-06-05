@@ -13,7 +13,8 @@ const itemSchema = new Schema({
     newPlant: { type: Boolean }, 
     plantOrigin: { type: String },
     plantOriginDate: {type: Date},
-    plantStage: { type: String }
+    plantStage: { type: String }, 
+    image: { type: String }
 }, {
     timestamps: true
 })

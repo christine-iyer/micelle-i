@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Cloudinary } from "@cloudinary/url-gen";
 import UploadWidget from '../components/MicroComponents/UploadWidget';
-import imageHolder from '../components/MicroComponents/placeholder.png'
 
 export default function NewPatient() {
   const [newpts, setNewpts] = useState([])
@@ -90,9 +89,7 @@ export default function NewPatient() {
         idState: '',
         medCardState: '',
         images: ''
-
-
-      })
+ })
     } catch (error) {
       console.error(error)
     }

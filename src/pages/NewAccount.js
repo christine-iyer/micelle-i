@@ -105,7 +105,7 @@ export default function NewAccts (){
             {'Description '}<input value={newacct.description} onChange={handleChange} name="description"></input><br/>
            
            
-            <button onClick={() => createNewAcct() }>Create A New NewAcct</button>
+            <button onClick={() => createNewAcct() }>Create A New New Acct</button>
             {
                 foundNewacct? <div>
                      <h2>{foundNewacct.name}</h2>
@@ -124,11 +124,40 @@ export default function NewAccts (){
                     {
                         newaccts.map((newacct) => {
                             return (
-                                <li key={newacct._id}>
+
+                             <div>
+                                {/* <li key={newacct._id}>
                                     {newacct.name} is {newacct.description} {newacct.email}
                                     <br/><button onClick={() => deleteNewAcct(newacct._id)}>X</button>
                                     <br/><button onClick={() => updateNewAcct(newacct._id)}>Edit</button>
-                                </li>
+                                </li> */}
+<table>
+<thead>
+
+
+<tr key={newacct._id}>
+<th scope='col' value={newacct.name} >  {newacct.name}  </th>
+<th scope='col' value={newacct.email}>  {newacct.email} </th>
+<th scope='col' value={newacct.phone}>{newacct.phone}   </th>
+<th scope='col' value={newacct.address}> {newacct.address}  </th>
+<th scope='col' value={newacct.city}> {newacct.city}  </th>
+<th scope='col' value={newacct.state}>  {newacct.state} </th>
+<th scope='col' value={newacct.zip}>  {newacct.zip} </th>
+<th scope='col' value={newacct.description}>  {newacct.description} </th>
+<th scope='col' value={newacct.zip}>  {newacct.zip} </th>
+<th scope='col' value={newacct.description}>  {newacct.description} </th>
+<th scope='col' > <button onClick={() => deleteNewAcct(newacct._id)}>X</button> </th>
+<th scope='col' >  <button onClick={() => updateNewAcct(newacct._id)}>Edit</button> </th>
+
+</tr>
+</thead>
+</table>
+
+<>
+
+
+</>
+</div>
                             )
                         })
                     }

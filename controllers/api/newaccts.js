@@ -38,6 +38,17 @@ const createNewacct = async (req, res, next) => {
     }
 }
 
+const getNewaccts= async (req, res, next) => {
+    try {
+        
+        const newaccts = await Newacct.find(req.body)
+        res.locals.data.newaccts = newaccts 
+        next()
+    } catch (error) {
+        res.status(400).json({ msg: error.message })
+    }
+}
+
 const respondWithNewaccts = (req, res) => {
     res.json(res.locals.data.newaccts)
 }
@@ -51,6 +62,7 @@ module.exports = {
     destroyNewacct,
     updateNewacct,
     createNewacct,
+    getNewaccts,
     respondWithNewaccts,
     respondWithNewacct
 }

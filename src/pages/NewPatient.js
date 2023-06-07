@@ -210,6 +210,22 @@ export default function NewPatient() {
         </div> : <>No New Accounts Found </>
       }
 
+{
+                newpts && newpts.length ? (<ul>
+                    {
+                        newpts.map((newpt) => {
+                            return (
+                                <li key={newpt._id}>
+                                    {newpt.name} is {newpt.description} {newpt.email}
+                                    <br/><button onClick={() => deleteNewPt(newpt._id)}>X</button>
+                                    <br/><button onClick={() => updateNewPt(newpt._id)}>Edit</button>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>): <h1>No Expenses Yet Add One Below</h1>
+            }
+
 
 
     </>

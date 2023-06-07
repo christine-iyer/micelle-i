@@ -27,11 +27,18 @@ const updateExpense = async (req, res, next) => {
 const createExpense = async (req, res, next) => {
     try {
         const createdExpense = await Expense.create(req.body)
-        // const user = await User.findOne({ email: res.locals.data.email })
-        // user.expenses.addToSet(createdExpense)
-        // await user.save()
-       
         res.locals.data.expense = createdExpense
+        next()
+    } catch (error) {
+        res.status(400).json({ msg: error.message })
+    }
+}
+
+const getExpenses= async (req, res, next) => {
+    try {
+        
+        const expenses = await Expense.find(req.body)
+        res.locals.data.expenses = expenses 
         next()
     } catch (error) {
         res.status(400).json({ msg: error.message })
@@ -51,6 +58,7 @@ module.exports = {
     destroyExpense,
     updateExpense,
     createExpense,
+    getExpenses,
     respondWithExpenses,
     respondWithExpense
 }

@@ -7,13 +7,15 @@ import './App.css';
 import NewAccount from './pages/NewAccount'
 import Revenue from './pages/Revenue'
 import Expenses from './pages/Expenses'
-import InventoryItem from './pages/InventoryItem'
+import NewItem from './pages/NewItem'
 import NewPatient from './pages/NewPatient';
 import Table from './pages/Table'
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import makeData from './makeData';
 import Bar from './components/Bar';
+import { Inventory } from '@mui/icons-material';
+import InventoryItem from './pages/NewItem';
 function App() {
 
   const columns = React.useMemo(
@@ -70,7 +72,7 @@ function App() {
             <Route path="/expenses" element={<Expenses />} />
             <Route path="/revenues" element={<Revenue />} />
             
-            <Route path="/inventorys" element={<InventoryItem />} />
+            <Route path="/inventorys" element={<NewItem />} />
            
             <Route path="/newaccts" element={<NewAccount />} />
             <Route path="/newpts" element={<NewPatient />} />

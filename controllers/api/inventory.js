@@ -1,12 +1,6 @@
 require('dotenv').config()
 const Item = require('../../models/itemSchema')
 
-
-
-// delete item
-// create item
-// update item
-
 const destroyItem = async (req, res, next) => {
     try {
         const deletedItem = await Item.findByIdAndDelete(req.params.id)
@@ -38,6 +32,17 @@ const createItem = async (req, res, next) => {
     }
 }
 
+const getItems= async (req, res, next) => {
+    try {
+        
+        const items = await Item.find(req.body)
+        res.locals.data.items = items 
+        next()
+    } catch (error) {
+        res.status(400).json({ msg: error.message })
+    }
+}
+
 const respondWithItems = (req, res) => {
     res.json(res.locals.data.items)
 }
@@ -51,6 +56,7 @@ module.exports = {
     destroyItem,
     updateItem,
     createItem,
+    getItems,
     respondWithItem, 
     respondWithItems
 }

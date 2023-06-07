@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Cloudinary } from "@cloudinary/url-gen";
 import UploadWidget from '../components/MicroComponents/UploadWidget';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 export default function NewItem() {
   const [inventorys, setInventorys] = useState([])
   const [foundNewInventory, setFoundNewInventory] = useState(null)
@@ -133,6 +133,24 @@ export default function NewItem() {
   }
   return (
     <>
+                {
+                inventorys && inventorys.length ? (<ul>
+                    {
+                        inventorys.map((inventory) => {
+                            return (
+                                <li>
+                                    {inventory.name} is {inventory.strain} {inventory.newPlant? 'one of our plants' : 'its processed with love'}
+                                    <br/><button onClick={() => deleteNewInventory (inventory._id)}>DeletedeleteNewInventory </button>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>): <h1>No inventory items Yet Add One Below</h1>
+            }
+
+
+
+
       <UploadWidget onUpload={handleOnUpload}>
         {({ open }) => {
           function handleOnClick(e) {
@@ -258,16 +276,48 @@ export default function NewItem() {
           <h2>{foundNewInventory.targetQuantity}</h2>
           <h2>{foundNewInventory.newPlant}</h2>
           <h2>{foundNewInventory.plantOrigin}</h2>
-
-
-
-
           <h2>{`${foundNewInventory.plantOriginDate.toLocaleString().replace(/T.*/, '').split('/').join('.')}`}</h2>
           <h2>{foundNewInventory.plantStage}</h2>
+
+          <>
+          {/* <Table striped bordered hover size="sm">
+      <thead>
+        <tr>
+        <th>name</th>
+          <th>strain</th>
+          <th>productCategory</th>
+          <th>inventoryName</th>
+          <th>itemDetail</th>
+          <th>unitMeasure</th>
+          <th>unitOnHand</th>
+          <th>unitCost</th>
+          <th>targetQuantity</th>
+          <th>plantOrigin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td>{inventorys.name}</td>
+          <td>{inventorys.strain}</td>
+          <td>{inventorys.productCategory}</td>
+          <td>{inventorys.inventoryName}</td>
+          <td>{inventorys.itemDetail}</td>
+          <td>{inventorys.unitMeasure}</td>
+          <td>{inventorys.unitOnHand}</td>
+          <td>{inventorys.unitCost}</td>
+          <td>{inventorys.targetQuantity}</td>
+          <td>{inventorys.plantOrigin}</td>
+        </tr>
+        
+      </tbody>
+    </Table> */}
+          
+          </>
 
 
         </div> : <>No New Accounts Found </>
       }
+
 
 
 

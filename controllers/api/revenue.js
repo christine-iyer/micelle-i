@@ -38,6 +38,17 @@ const createRevenue = async (req, res, next) => {
     }
 }
 
+const getRevenues= async (req, res, next) => {
+    try {
+        
+        const revenues = await Revenue.find(req.body)
+        res.locals.data.revenues = revenues
+        next()
+    } catch (error) {
+        res.status(400).json({ msg: error.message })
+    }
+}
+
 const respondWithRevenues = (req, res) => {
     res.json(res.locals.data.revenues)
 }
@@ -51,6 +62,7 @@ module.exports = {
     destroyRevenue,
     updateRevenue,
     createRevenue,
+    getRevenues,
     respondWithRevenues,
     respondWithRevenue
 }

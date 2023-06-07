@@ -93,6 +93,7 @@ export default function NewAccts (){
 
     return (
         <>
+        
 
             {'New Account Payable '}<input value={newacct.name} onChange={handleChange} name="name"></input><br/>
             {'Email '}<input value={newacct.email} onChange={handleChange} name="email"></input><br/>
@@ -116,6 +117,22 @@ export default function NewAccts (){
                     <h2>{foundNewacct.zip}</h2>
                     <h2>{foundNewacct.description}</h2>
                 </div>: <>No New Accounts Found </>
+            }
+
+{
+                newaccts && newaccts.length ? (<ul>
+                    {
+                        newaccts.map((newacct) => {
+                            return (
+                                <li key={newacct._id}>
+                                    {newacct.name} is {newacct.description} {newacct.email}
+                                    <br/><button onClick={() => deleteNewAcct(newacct._id)}>X</button>
+                                    <br/><button onClick={() => updateNewAcct(newacct._id)}>Edit</button>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>): <h1>No Expenses Yet Add One Below</h1>
             }
         
             

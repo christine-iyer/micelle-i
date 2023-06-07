@@ -37,6 +37,20 @@ const createNewPt = async (req, res, next) => {
     }
 }
 
+const getNewPts= async (req, res, next) => {
+    try {
+        
+        const newpts = await NewPt.find(req.body)
+        res.locals.data.newpts = newpts 
+        next()
+    } catch (error) {
+        res.status(400).json({ msg: error.message })
+    }
+}
+const respondWithNewPts = (req, res) => {
+    res.json(res.locals.data.newpts)
+}
+
 const respondWithNewPt = (req, res) => {
     res.json(res.locals.data.newpt)
 }
@@ -46,6 +60,8 @@ const respondWithNewPt = (req, res) => {
 module.exports = {
     destroyNewPt,
     updateNewPt,
+    getNewPts,
     createNewPt,
-    respondWithNewPt
+    respondWithNewPt, 
+    respondWithNewPts
 }

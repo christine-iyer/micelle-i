@@ -136,16 +136,16 @@ export default function NewAccts (){
 
 
 <tr key={newacct._id}>
-<th scope='col' value={newacct.name} >  {newacct.name}  </th>
-<th scope='col' value={newacct.email}>  {newacct.email} </th>
-<th scope='col' value={newacct.phone}>{newacct.phone}   </th>
-<th scope='col' value={newacct.address}> {newacct.address}  </th>
-<th scope='col' value={newacct.city}> {newacct.city}  </th>
-<th scope='col' value={newacct.state}>  {newacct.state} </th>
-<th scope='col' value={newacct.zip}>  {newacct.zip} </th>
-<th scope='col' value={newacct.description}>  {newacct.description} </th>
-<th scope='col' value={newacct.zip}>  {newacct.zip} </th>
-<th scope='col' value={newacct.description}>  {newacct.description} </th>
+<th  >  {newacct.name}  </th>
+<th >  {newacct.email} </th>
+<th>{newacct.phone}   </th>
+<th > {newacct.address}  </th>
+<th > {newacct.city}  </th>
+<th >  {newacct.state} </th>
+<th >  {newacct.zip} </th>
+<th >  {newacct.description} </th>
+<th >  {newacct.zip} </th>
+<th >  {newacct.description} </th>
 <th scope='col' > <button onClick={() => deleteNewAcct(newacct._id)}>X</button> </th>
 <th scope='col' >  <button onClick={() => updateNewAcct(newacct._id)}>Edit</button> </th>
 

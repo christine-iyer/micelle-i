@@ -36,6 +36,10 @@ export default function Bar(props) {
         <h1>New Patient</h1>
       </Link>
       &nbsp;  🧞‍♂️🧜🏿‍♀️ &nbsp;
+      {/* <Link to="/rando">
+        <h1>Random Edit</h1>
+      </Link> */}
+      &nbsp;  🧞‍♂️🧜🏿‍♀️ &nbsp;
 </Nav>
 
 </Container>

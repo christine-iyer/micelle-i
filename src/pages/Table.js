@@ -195,34 +195,66 @@ export default function EditableTable() {
         Header: 'Name',
         columns: [
           {
-            Header: 'First Name',
-            accessor: 'firstName',
+            Header: 'Item Name',
+            accessor: 'name',
           },
           {
-            Header: 'Last Name',
-            accessor: 'lastName',
+            Header: 'Strain',
+            accessor: 'strain',
+          },
+          {
+            Header: 'Product Category', 
+            accessor: 'productCategory',
+          },
+          {
+            Header: 'Inventory Name', 
+            accessor: 'inventoryName',
+          },
+          {
+            Header: 'Item Detail', 
+            accessor: 'itemDetail'
+          },
+          {
+            Header: 'Unit Measure',
+            accessor: 'unitMeasure',
           },
         ],
       },
       {
-        Header: 'Info',
+        Header: 'Inventory',
+        columns: [
+          
+          {
+            Header: 'Units on Hand',
+            accessor: 'unitOnHand',
+          },
+          {
+            Header: 'Target Quantity',
+            accessor: 'targetQuantity',
+          },
+          {
+            Header: 'Unit Cost',
+            accessor: 'unitCost',
+          },
+        ],
+      },
+      {
+        Header: 'New Plant Inventory',
         columns: [
           {
-            Header: 'Age',
-            accessor: 'age',
+            Header: 'Plant Origin Date',
+            accessor: 'plantOriginDate',
           },
           {
-            Header: 'Visits',
-            accessor: 'visits',
+            Header: 'Plant Origin',
+            accessor: 'plantOrigin',
           },
+          
           {
-            Header: 'Status',
-            accessor: 'status',
+            Header: 'Plant Stage',
+            accessor: 'plantStage',
           },
-          {
-            Header: 'Profile Progress',
-            accessor: 'progress',
-          },
+
         ],
       },
     ],

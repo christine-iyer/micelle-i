@@ -4,8 +4,8 @@ import UploadWidget from '../components/MicroComponents/UploadWidget';
 import "bootstrap/dist/css/bootstrap.min.css";
 export default function NewItem() {
   const [inventorys, setInventorys] = useState([])
-  const [foundNewInventory, setFoundNewInventory] = useState(null)
-  const [newInventory, setNewInventory] = useState({
+  const [foundInventory, setFoundInventory] = useState(null)
+  const [inventory, setInventory] = useState({
     name: '',
     strain: '',
     productCategory: '',
@@ -22,11 +22,11 @@ export default function NewItem() {
     image: ''
   })
   const handleChange = (evt) => {
-    setNewInventory({ ...newInventory, [evt.target.name]: evt.target.value })
+    setInventory({ ...inventory, [evt.target.name]: evt.target.value })
   }
 
   // index
-  const getNewInventorys = async () => {
+  const getInventorys = async () => {
     try {
       const response = await fetch('/api/inventorys')
       const data = await response.json()
@@ -36,7 +36,7 @@ export default function NewItem() {
     }
   }
   // delete
-  const deleteNewInventory = async (id) => {
+  const deleteInventory = async (id) => {
     try {
       const response = await fetch(`/api/inventorys/${id}`, {
         method: "DELETE",
@@ -45,13 +45,13 @@ export default function NewItem() {
         }
       })
       const data = await response.json()
-      setFoundNewInventory(data)
+      setFoundInventory(data)
     } catch (error) {
       console.error(error)
     }
   }
   // update
-  const updateNewInventory = async (id, updatedData) => {
+  const updateInventory = async (id, updatedData) => {
     try {
       const response = await fetch(`/api/inventorys/${id}`, {
         method: "PUT",
@@ -61,24 +61,33 @@ export default function NewItem() {
         body: JSON.stringify({ ...updatedData })
       })
       const data = await response.json()
-      setFoundNewInventory(data)
+      const inventorysCopy = [...inventorys]
+      const index = inventorysCopy.findIndex(inventory => id === inventory._id)
+      inventorysCopy[index] = { ...inventorysCopy[index], ...updatedData }
+      setInventorys(inventorysCopy)
     } catch (error) {
       console.error(error)
     }
+    //   const data = await response.json()
+    //   setFoundInventory(data)
+    // } catch (error) {
+    //   console.error(error)
+    // }
+
   }
   // create
-  const createNewInventory = async () => {
+  const createInventory = async () => {
     try {
       const response = await fetch(`/api/inventorys`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ ...newInventory })
+        body: JSON.stringify({ ...inventory })
       })
       const data = await response.json()
-      setFoundNewInventory(data)
-      setNewInventory({
+      setFoundInventory(data)
+      setInventory({
         name: '',
         strain: '',
         productCategory: '',
@@ -98,8 +107,8 @@ export default function NewItem() {
     }
   }
   useEffect(() => {
-    getNewInventorys()
-  }, [foundNewInventory])
+    getInventorys()
+  }, [foundInventory])
 
   const [url, updateUrl] = useState(false);
   const [error, updateError] = useState();
@@ -114,7 +123,7 @@ export default function NewItem() {
     console.dir(result);
     updateUrl(result?.info?.secure_url);
     console.dir(url);
-    setNewInventory({
+    setInventory({
       name: '',
       strain: '',
       productCategory: '',
@@ -133,20 +142,57 @@ export default function NewItem() {
   }
   return (
     <>
-                {
-                inventorys && inventorys.length ? (<ul>
-                    {
-                        inventorys.map((inventory) => {
-                            return (
-                                <li>
-                                    {inventory.name} is {inventory.strain} {inventory.newPlant? 'one of our plants' : 'its processed with love'}
-                                    <br/><button onClick={() => deleteNewInventory (inventory._id)}>DeletedeleteNewInventory </button>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>): <h1>No inventory items Yet Add One Below</h1>
-            }
+      {
+        inventorys && inventorys.length ? (<>
+          {
+            inventorys.map((inventory, row) => {
+              return (
+                <table key = {inventory._id}>
+                  {/* <tr>
+                    <th>
+                      <td> {inventory.name}</td>
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th>
+                      <td> {inventory.strain}</td>
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th>
+                      <td> {inventory.targetQuantity}</td>
+                    </th>
+                  </tr> */}
+
+
+                  <td>{inventory.name}</td>
+                  <td>{inventory.strain}</td>
+                  <td>{inventory.productCategory}</td>
+                  <td>{inventory.inventoryName}</td>
+                  <td>{inventory.itemDetail}</td>
+                  <td>{inventory.unitMeasure}</td>
+                  <td>{inventory.unitOnHand}</td>
+                  <td>{inventory.unitCost}</td>
+                  <td>{inventory.targetQuantity}</td>
+                  <td>{inventory.newPlant}</td>
+                  <td>{inventory.plantOrigin}</td>
+                  <td>{inventory.plantStage}</td>
+                  <td>{inventory.plantOriginDate}</td>
+
+
+                  
+                  {inventory.name} is {inventory.strain} {inventory.newPlant ? 'one of our plants' : 'its processed with love'}
+                  <br />
+                  {/* <button onClick={() => deleteInventory(inventory._id)}>Delete Inventory </button>
+                  <button onClick={() => updateInventory(inventory._id)}>EditInventory </button> */}
+                </table>
+              )
+            })
+          }
+        </>) : <h1>No inventory items Yet Add One Below</h1>
+      }
 
 
 
@@ -172,9 +218,9 @@ export default function NewItem() {
           <p className="url">{url}</p>
         </div>
       )}
-      {'New Item Name'}<input value={newInventory.name} onChange={handleChange} name="name"></input><br />
+      {'New Item Name'}<input value={inventory.name} onChange={handleChange} name="name"></input><br />
       {'Strain '}<select
-        value={newInventory.strain}
+        value={inventory.strain}
         onChange={handleChange}
         name="strain">
         <option value="Select">Select One ...</option>
@@ -184,7 +230,7 @@ export default function NewItem() {
         <option value="Not Specified">Not Specified</option>
       </select><br />
       {'Product Category '}<select
-        value={newInventory.productCategory}
+        value={inventory.productCategory}
         onChange={handleChange}
         name="productCategory">
         <option value="Select">Select One ...</option>
@@ -193,7 +239,7 @@ export default function NewItem() {
         <option value="Products Available for Sale">Products Available for Sale</option>
       </select><br />
       {'Inventory Name '}<select
-        value={newInventory.inventoryName}
+        value={inventory.inventoryName}
         onChange={handleChange}
         name="inventoryName">
         <option value="Select">Select One ...</option>
@@ -219,10 +265,10 @@ export default function NewItem() {
         <option value="Topicals">Topicals</option>
         <option value="Marshmallows">Marshmallows</option>
       </select><br />
-      {'Inventory Item Detail'}<input value={newInventory.itemDetail} onChange={handleChange} name="itemDetail"></input><br />
+      {'Inventory Item Detail'}<input value={inventory.itemDetail} onChange={handleChange} name="itemDetail"></input><br />
       {'Unit Measure '}
       <select
-        value={newInventory.unitMeasure}
+        value={inventory.unitMeasure}
         onChange={handleChange}
         name="unitMeasure">
         <option value="Select">Select</option>
@@ -234,24 +280,24 @@ export default function NewItem() {
         <option value="each">each</option>
         <option value="other">other</option>
       </select><br />
-      {'Units on Hand '}<input value={newInventory.unitOnHand} type='number' onChange={handleChange} name="unitOnHand"></input><br />
-      {'Unit Cost '}<input type="number" value={newInventory.unitCost} onChange={handleChange} name="unitCost"></input><br />
-      {'Target Quantity '}<input value={newInventory.targetQuantity} type='number' onChange={handleChange} name="targetQuantity"></input><br />
-      {'New Plant '}<input type='checkbox' checked={newInventory.newPlant}
-        onChange={(evt) => setNewInventory({ ...newInventory, newPlant: evt.target.checked })}
+      {'Units on Hand '}<input value={inventory.unitOnHand} type='number' onChange={handleChange} name="unitOnHand"></input><br />
+      {'Unit Cost '}<input type="number" value={inventory.unitCost} onChange={handleChange} name="unitCost"></input><br />
+      {'Target Quantity '}<input value={inventory.targetQuantity} type='number' onChange={handleChange} name="targetQuantity"></input><br />
+      {'New Plant '}<input type='checkbox' checked={inventory.newPlant}
+        onChange={(evt) => setInventory({ ...inventory, newPlant: evt.target.checked })}
         name="newPlant"></input><br />
       {'Plant Origin '}      <select
-        value={newInventory.plantOrigin}
+        value={inventory.plantOrigin}
         onChange={handleChange}
         name="plantOrigin">
         <option value="Select">Select</option>
         <option value="Seed">Seed</option>
         <option value="Clone">Clone</option>
         <option value="Mature Plant">Mature Plant</option>
-</select><br />
-{'Plant Origin Date '}<input type='date' value={newInventory.plantOriginDate} onChange={handleChange} name="plantOriginDate"></input><br />
+      </select><br />
+      {'Plant Origin Date '}<input type='date' value={inventory.plantOriginDate} onChange={handleChange} name="plantOriginDate"></input><br />
       {'Plant Stage '}<select
-        value={newInventory.plantStage}
+        value={inventory.plantStage}
         onChange={handleChange}
         name="plantStage">
         <option value="Select">Select One ...</option>
@@ -262,25 +308,25 @@ export default function NewItem() {
       </select><br />
       {'ID Image '}<input value={url} onChange={handleChange} name="url"></input><br />
 
-<button onClick={() => createNewInventory()}>Create A New NewInventory</button>
+      <button onClick={() => createInventory()}>Create A New NewInventory</button>
       {
-        foundNewInventory ? <div>
-          <h2>{foundNewInventory.name}</h2>
-          <h2>{foundNewInventory.strain}</h2>
-          <h2>{foundNewInventory.productCategory}</h2>
-          <h2>{foundNewInventory.inventoryName}</h2>
-          <h2>{foundNewInventory.itemDetail}</h2>
-          <h2>{foundNewInventory.unitMeasure}</h2>
-          <h2>{foundNewInventory.unitOnHand}</h2>
-          <h2>{foundNewInventory.unitCost}</h2>
-          <h2>{foundNewInventory.targetQuantity}</h2>
-          <h2>{foundNewInventory.newPlant}</h2>
-          <h2>{foundNewInventory.plantOrigin}</h2>
-          <h2>{`${foundNewInventory.plantOriginDate.toLocaleString().replace(/T.*/, '').split('/').join('.')}`}</h2>
-          <h2>{foundNewInventory.plantStage}</h2>
+        foundInventory ? <div>
+          <h2>{foundInventory.name}</h2>
+          <h2>{foundInventory.strain}</h2>
+          <h2>{foundInventory.productCategory}</h2>
+          <h2>{foundInventory.inventoryName}</h2>
+          <h2>{foundInventory.itemDetail}</h2>
+          <h2>{foundInventory.unitMeasure}</h2>
+          <h2>{foundInventory.unitOnHand}</h2>
+          <h2>{foundInventory.unitCost}</h2>
+          <h2>{foundInventory.targetQuantity}</h2>
+          <h2>{foundInventory.newPlant}</h2>
+          <h2>{foundInventory.plantOrigin}</h2>
+          <h2>{`${foundInventory.plantOriginDate.toLocaleString().replace(/T.*/, '').split('/').join('.')}`}</h2>
+          <h2>{foundInventory.plantStage}</h2>
 
           <>
-          {/* <Table striped bordered hover size="sm">
+            {/* <Table striped bordered hover size="sm">
       <thead>
         <tr>
         <th>name</th>
@@ -311,11 +357,11 @@ export default function NewItem() {
         
       </tbody>
     </Table> */}
-          
+
           </>
 
 
-        </div> : <>No New Accounts Found </>
+        </div> : <>  </>
       }
 
 

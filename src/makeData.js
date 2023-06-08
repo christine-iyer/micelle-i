@@ -9,19 +9,21 @@ const range = len => {
 }
 
 const newPerson = () => {
-  const statusChance = Math.random()
+
   return {
-    firstName: "Chris",
-    lastName: "Crystal",
-    age: Math.floor(Math.random() * 30),
-    visits: Math.floor(Math.random() * 100),
-    progress: Math.floor(Math.random() * 100),
-    status:
-      statusChance > 0.66
-        ? 'relationship'
-        : statusChance > 0.33
-        ? 'complicated'
-        : 'single',
+    name: "Chris",
+    strain: "Crystal",
+    productCategory: Math.floor(Math.random() * 30),
+    inventoryName: Math.floor(Math.random() * 100),
+    itemDetail: Math.floor(Math.random() * 100),
+    unitMeasure: 'ml', 
+    unitOnHand: 0, 
+    unitCost: 30.99, 
+    targetQuantity: 10, 
+    plantOrigin: 'seed', 
+    plantOriginDate: '', 
+    plantStage: 'vegetative'
+
   }
 }
 

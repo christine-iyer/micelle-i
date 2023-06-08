@@ -1,6 +1,41 @@
 import { useState, useEffect } from 'react'
 
+export const COLUMNS = [
+    {
+        Header: 'Name',
+        accessor: 'name',
+    },
+    {
+        Header: 'Email',
+        accessor: 'email',
+    },
+    {
+        Header: 'Phone',
+        accessor: 'phone',
+    },
+    {
+        Header: 'Address',
+        accessor: 'address',
+    },
+    {
+        Header: 'City',
+        accessor: 'city',
+    },
+    {
+        Header: 'State',
+        accessor: 'state',
+    },
+    {
+        Header: 'Zip',
+        accessor: 'zip',
+    },
+    {
+        Header: 'Description',
+        accessor: 'description',
+    }
+];
 export default function NewAccts (){
+
 
   const [newaccts, setNewaccts] = useState([])
   const [foundNewacct, setFoundNewacct] = useState(null)
@@ -44,6 +79,11 @@ export default function NewAccts (){
         }
     }
     // update
+
+
+
+
+    
     const updateNewAcct = async (id, updatedData) => {
         try {
             const response = await fetch(`/api/newaccts/${id}`, {
@@ -54,6 +94,8 @@ export default function NewAccts (){
                 body: JSON.stringify({...updatedData})
             })
             const data = await response.json()
+
+
             setFoundNewacct(data)
         } catch (error) {
             console.error(error)
@@ -135,19 +177,20 @@ export default function NewAccts (){
 <thead>
 
 
+
 <tr key={newacct._id}>
-<th  >  {newacct.name}  </th>
-<th >  {newacct.email} </th>
-<th>{newacct.phone}   </th>
-<th > {newacct.address}  </th>
-<th > {newacct.city}  </th>
-<th >  {newacct.state} </th>
-<th >  {newacct.zip} </th>
-<th >  {newacct.description} </th>
-<th >  {newacct.zip} </th>
-<th >  {newacct.description} </th>
-<th scope='col' > <button onClick={() => deleteNewAcct(newacct._id)}>X</button> </th>
-<th scope='col' >  <button onClick={() => updateNewAcct(newacct._id)}>Edit</button> </th>
+<td>  {newacct.name}  </td>
+<td>  {newacct.email} </td>
+<td>{newacct.phone}   </td>
+<td> {newacct.address}  </td>
+<td> {newacct.city}  </td>
+<td>  {newacct.state} </td>
+<td>  {newacct.zip} </td>
+<td>  {newacct.description} </td>
+<td>  {newacct.zip} </td>
+<td>  {newacct.description} </td>
+<td> <button onClick={() => deleteNewAcct(newacct._id)}>X</button> </td>
+<td>  <button onClick={() => updateNewAcct(newacct._id)}>Edit</button> </td>
 
 </tr>
 </thead>

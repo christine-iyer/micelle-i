@@ -69,11 +69,11 @@ height: 9vh; */
   align-items: center;
 }
 
-table {
+/* table {
   border: 2px solid forestgreen;
   width: 900px;
   height: 70px;
-} */
+} 
 
 th {
   border-bottom: 1px solid black;
@@ -81,5 +81,27 @@ th {
 
 td {
   text-align: center;
+}
+table tbody tr td {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+} 
+*/
+/* index.css */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 

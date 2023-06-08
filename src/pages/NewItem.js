@@ -25,6 +25,8 @@ export default function NewItem() {
     setInventory({ ...inventory, [evt.target.name]: evt.target.value })
   }
 
+const columns = ['name', 'strain', 'productCategory', 'inventoryName', 'itemDetail', 'unitMeasure', 'unitOnHand', 'targetQuantity', 'unitCost', 'plantOriginDate', 'plantOrigin','plantStage' ]
+
   // index
   const getInventorys = async () => {
     try {

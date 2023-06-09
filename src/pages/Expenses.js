@@ -89,20 +89,8 @@ export default function Expenses (){
 
     return (
         <>
-            {
-                expenses && expenses.length ? (<ul>
-                    {
-                        expenses.map((expense) => {
-                            return (
-                                <li key={expense._id}>
-                                    {expense.accountPayable} is {expense.unitMeasure} {expense.barter? 'Barter' : 'Cash'}
-                                    <br/><button onClick={() => deleteExpense(expense._id)}>X</button>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>): <h1>No Expenses Yet Add One Below</h1>
-            }
+        <h1>Add a New Account Payable</h1>
+
             {'Account Payable '}<input value={newExpense.accountPayable} onChange={handleChange} name="accountPayable"></input><br/>
             {'Description '}<input value={newExpense.itemDescription} onChange={handleChange} name="itemDescription"></input><br/>
             {'Quantity '}<input type="number" checked={newExpense.itemQuantity} onChange={handleChange}></input><br/>
@@ -143,6 +131,20 @@ export default function Expenses (){
                     <h3>{foundExpense.barter? 'Barter Customer': 'I will pay cash'}</h3>
                     <span>{foundExpense.itemQuantity} {foundExpense.salesTax} {foundExpense.itemDescription} {foundExpense.unitMeasure}</span>
                 </div>: <>No Expense in Found Expense State</>
+            }
+                        {
+                expenses && expenses.length ? (<ul>
+                    {
+                        expenses.map((expense) => {
+                            return (
+                                <p key={expense._id}>
+                                    {expense.accountPayable} is {expense.unitMeasure} {expense.barter? 'Barter' : 'Cash'}
+                                    
+                                </p>
+                            )
+                        })
+                    }
+                </ul>): <h1>No Expenses Yet Add One</h1>
             }
         
             

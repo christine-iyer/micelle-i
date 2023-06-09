@@ -93,20 +93,7 @@ export default function Revenues() {
 
   return (
     <>
-      {
-        revenues && revenues.length ? (<ul>
-          {
-            revenues.map((revenue) => {
-              return (
-                <li key={revenue._id}>
-                  {revenue.accountReceivable} is {revenue.unitMeasure} {revenue.barter ? 'Barter' : 'Cash'}
-                  <br /><button onClick={() => deleteRevenue(revenue._id)}>X</button>
-                </li>
-              )
-            })
-          }
-        </ul>) : <h1>No Revenues Yet Add One Below</h1>
-      }
+
       {'Account Receivable '}<input value={newRevenue.accountReceivable} onChange={handleChange} name="accountReceivable"></input><br />
       {'Strain '}
       <select
@@ -162,6 +149,20 @@ export default function Revenues() {
           <h3>{foundRevenue.barter ? 'Barter Customer' : 'I will pay cash'}</h3>
           <span>{foundRevenue.itemQuantity} {foundRevenue.salesTax} {foundRevenue.itemDescription} {foundRevenue.unitMeasure}</span>
         </div> : <>No Revenue in Found Revenue State</>
+      }
+            {
+        revenues && revenues.length ? (<ul>
+          {
+            revenues.map((revenue) => {
+              return (
+                <p key={revenue._id}>
+                  {revenue.accountReceivable} is {revenue.unitMeasure} {revenue.barter ? 'Barter' : 'Cash'}
+                  
+                </p>
+              )
+            })
+          }
+        </ul>) : <h1>No Revenues Yet Add One Below</h1>
       }
     </>
   )

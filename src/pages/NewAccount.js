@@ -204,7 +204,7 @@ export default function NewAccts (){
                             )
                         })
                     }
-                </ul>): <h1>No Expenses Yet Add One Below</h1>
+                </ul>): <h1>No Expenses Yet Add One</h1>
             }
         
             

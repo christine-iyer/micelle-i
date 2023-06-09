@@ -144,61 +144,6 @@ const columns = ['name', 'strain', 'productCategory', 'inventoryName', 'itemDeta
   }
   return (
     <>
-      {
-        inventorys && inventorys.length ? (<>
-          {
-            inventorys.map((inventory, row) => {
-              return (
-                <table key = {inventory._id}>
-                  {/* <tr>
-                    <th>
-                      <td> {inventory.name}</td>
-                    </th>
-                  </tr>
-
-                  <tr>
-                    <th>
-                      <td> {inventory.strain}</td>
-                    </th>
-                  </tr>
-
-                  <tr>
-                    <th>
-                      <td> {inventory.targetQuantity}</td>
-                    </th>
-                  </tr> */}
-
-
-                  <td>{inventory.name}</td>
-                  <td>{inventory.strain}</td>
-                  <td>{inventory.productCategory}</td>
-                  <td>{inventory.inventoryName}</td>
-                  <td>{inventory.itemDetail}</td>
-                  <td>{inventory.unitMeasure}</td>
-                  <td>{inventory.unitOnHand}</td>
-                  <td>{inventory.unitCost}</td>
-                  <td>{inventory.targetQuantity}</td>
-                  <td>{inventory.newPlant}</td>
-                  <td>{inventory.plantOrigin}</td>
-                  <td>{inventory.plantStage}</td>
-                  <td>{inventory.plantOriginDate}</td>
-
-
-                  
-                  {inventory.name} is {inventory.strain} {inventory.newPlant ? 'one of our plants' : 'its processed with love'}
-                  <br />
-                  {/* <button onClick={() => deleteInventory(inventory._id)}>Delete Inventory </button>
-                  <button onClick={() => updateInventory(inventory._id)}>EditInventory </button> */}
-                </table>
-              )
-            })
-          }
-        </>) : <h1>No inventory items Yet Add One Below</h1>
-      }
-
-
-
-
       <UploadWidget onUpload={handleOnUpload}>
         {({ open }) => {
           function handleOnClick(e) {
@@ -328,42 +273,48 @@ const columns = ['name', 'strain', 'productCategory', 'inventoryName', 'itemDeta
           <h2>{foundInventory.plantStage}</h2>
 
           <>
-            {/* <Table striped bordered hover size="sm">
-      <thead>
-        <tr>
-        <th>name</th>
-          <th>strain</th>
-          <th>productCategory</th>
-          <th>inventoryName</th>
-          <th>itemDetail</th>
-          <th>unitMeasure</th>
-          <th>unitOnHand</th>
-          <th>unitCost</th>
-          <th>targetQuantity</th>
-          <th>plantOrigin</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-        <td>{inventorys.name}</td>
-          <td>{inventorys.strain}</td>
-          <td>{inventorys.productCategory}</td>
-          <td>{inventorys.inventoryName}</td>
-          <td>{inventorys.itemDetail}</td>
-          <td>{inventorys.unitMeasure}</td>
-          <td>{inventorys.unitOnHand}</td>
-          <td>{inventorys.unitCost}</td>
-          <td>{inventorys.targetQuantity}</td>
-          <td>{inventorys.plantOrigin}</td>
-        </tr>
-        
-      </tbody>
-    </Table> */}
+            
 
           </>
 
 
         </div> : <>  </>
+      }
+            {
+        inventorys && inventorys.length ? (<>
+          {
+            inventorys.map((inventory, row) => {
+              return (
+                <table key = {inventory._id}>
+                  <th key = {columns._id}>{columns._id}</th>
+
+
+
+                  <td>{inventory.name}</td>
+                  <td>{inventory.strain}</td>
+                  <td>{inventory.productCategory}</td>
+                  <td>{inventory.inventoryName}</td>
+                  <td>{inventory.itemDetail}</td>
+                  <td>{inventory.unitMeasure}</td>
+                  <td>{inventory.unitOnHand}</td>
+                  <td>{inventory.unitCost}</td>
+                  <td>{inventory.targetQuantity}</td>
+                  <td>{inventory.newPlant}</td>
+                  <td>{inventory.plantOrigin}</td>
+                  <td>{inventory.plantStage}</td>
+                  <td>{inventory.plantOriginDate}</td>
+
+
+                  
+                  {inventory.name} is {inventory.strain} {inventory.newPlant ? 'one of our plants' : 'its processed with love'}
+                  <br />
+                  {/* <button onClick={() => deleteInventory(inventory._id)}>Delete Inventory </button>
+                  <button onClick={() => updateInventory(inventory._id)}>EditInventory </button> */}
+                </table>
+              )
+            })
+          }
+        </>) : <h1>No inventory items Yet Add One</h1>
       }
 
 

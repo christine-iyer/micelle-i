@@ -1,0 +1,622 @@
+[
+     {
+       "Code": 10001,
+       "Category": "Cash-on hand",
+       "Allocation": "Cash-on hand"
+     },
+     {
+       "Code": 11001,
+       "Category": "Accounts Receivable",
+       "Allocation": "Accounts Receivable"
+     },
+     {
+       "Code": 11005,
+       "Category": "Other Receivables",
+       "Allocation": "Other Receivables"
+     },
+     {
+       "Code": 12001,
+       "Category": "Due from Member",
+       "Allocation": "Due from Member"
+     },
+     {
+       "Code": 13001,
+       "Category": "Inventory",
+       "Allocation": "Inventory"
+     },
+     {
+       "Code": 13010,
+       "Category": "Inventory",
+       "Allocation": "Plants in Process"
+     },
+     {
+       "Code": 13020,
+       "Category": "Inventory",
+       "Allocation": "Supplies-Plant Growth"
+     },
+     {
+       "Code": 13030,
+       "Category": "Inventory",
+       "Allocation": "Supplies-Product Production"
+     },
+     {
+       "Code": 13040,
+       "Category": "Inventory",
+       "Allocation": "FG-Raw Oil"
+     },
+     {
+       "Code": 13050,
+       "Category": "Inventory",
+       "Allocation": "FG-Gummies"
+     },
+     {
+       "Code": 13060,
+       "Category": "Inventory",
+       "Allocation": "FG-Sleepies"
+     },
+     {
+       "Code": 13070,
+       "Category": "Inventory",
+       "Allocation": "FG-Tinctures"
+     },
+     {
+       "Code": 13080,
+       "Category": "Inventory",
+       "Allocation": "FG-Topicals"
+     },
+     {
+       "Code": 13090,
+       "Category": "Inventory",
+       "Allocation": "FG-Bath Bombs"
+     },
+     {
+       "Code": 13100,
+       "Category": "Inventory",
+       "Allocation": "FG-Accessories Other"
+     },
+     {
+       "Code": 14001,
+       "Category": "Prepaid Expense",
+       "Allocation": "Prepaid Expense"
+     },
+     {
+       "Code": 14050,
+       "Category": "Other Current Assets",
+       "Allocation": "Other Current Assets"
+     },
+     {
+       "Code": 16000,
+       "Category": "Machinery and Equipment",
+       "Allocation": "Machinery and Equipment"
+     },
+     {
+       "Code": 16010,
+       "Category": "Furniture and Fixtures",
+       "Allocation": "Furniture and Fixtures"
+     },
+     {
+       "Code": 16020,
+       "Category": "Building and Improvements",
+       "Allocation": "Building and Improvements"
+     },
+     {
+       "Code": 16030,
+       "Category": "Leasehold Improvements",
+       "Allocation": "Leasehold Improvements"
+     },
+     {
+       "Code": 16100,
+       "Category": "Accumulated Depreciation",
+       "Allocation": "Accumulated Depreciation"
+     },
+     {
+       "Code": 17000,
+       "Category": "Intangible Assets",
+       "Allocation": "Intangible Assets"
+     },
+     {
+       "Code": 17010,
+       "Category": "Accumulated Amortization",
+       "Allocation": "Accumulated Amortization"
+     },
+     {
+       "Code": 20001,
+       "Category": "Accounts Payable-Trade",
+       "Allocation": "Accounts Payable-Trade"
+     },
+     {
+       "Code": 20010,
+       "Category": "Credit Cards Payable",
+       "Allocation": "Credit Cards Payable"
+     },
+     {
+       "Code": 20012,
+       "Category": "Sales Tax Payable-5.5%",
+       "Allocation": "Sales Tax Payable-5.5%"
+     },
+     {
+       "Code": 20013,
+       "Category": "Sales Tax Payable-8%",
+       "Allocation": "Sales Tax Payable-8%"
+     },
+     {
+       "Code": 20020,
+       "Category": "Accrued Expenses",
+       "Allocation": "Accrued Expenses"
+     },
+     {
+       "Code": 20030,
+       "Category": "Other Current Liabilites",
+       "Allocation": "Other Current Liabilites"
+     },
+     {
+       "Code": 20040,
+       "Category": "Customer Deposits and Advances",
+       "Allocation": "Customer Deposits and Advances"
+     },
+     {
+       "Code": 20042,
+       "Category": "Due to Member",
+       "Allocation": "Due to Member"
+     },
+     {
+       "Code": 20100,
+       "Category": "Current Portion of LTD",
+       "Allocation": "Current Portion of LTD"
+     },
+     {
+       "Code": 30010,
+       "Category": "Retained Earnings",
+       "Allocation": "Retained Earnings"
+     },
+     {
+       "Code": 30050,
+       "Category": "Member Distribution",
+       "Allocation": "Member Distribution"
+     },
+     {
+       "Code": 40010,
+       "Category": "Accessories",
+       "Allocation": "Accessories"
+     },
+     {
+       "Code": 40030,
+       "Category": "Raw Oil",
+       "Allocation": "Raw Oil"
+     },
+     {
+       "Code": 40040,
+       "Category": "Candies",
+       "Allocation": "Candies"
+     },
+     {
+       "Code": 40050,
+       "Category": "Topicals",
+       "Allocation": "Topicals"
+     },
+     {
+       "Code": 40060,
+       "Category": "Marshmallows",
+       "Allocation": "Marshmallows"
+     },
+     {
+       "Code": 40070,
+       "Category": "Raw Flowers",
+       "Allocation": "Raw Flowers"
+     },
+     {
+       "Code": 40080,
+       "Category": "Tinctures",
+       "Allocation": "Tinctures"
+     },
+     {
+       "Code": 40090,
+       "Category": "Gummies",
+       "Allocation": "Gummies"
+     },
+     {
+       "Code": 40095,
+       "Category": "Mix Edibles",
+       "Allocation": "Mix Edibles"
+     },
+     {
+       "Code": 40195,
+       "Category": "Freight-out",
+       "Allocation": "Freight-out"
+     },
+     {
+       "Code": 40200,
+       "Category": "Commission Income",
+       "Allocation": "Commission Income"
+     },
+     {
+       "Code": 40900,
+       "Category": "Other Income",
+       "Allocation": "Other Income"
+     },
+     {
+       "Code": 50001,
+       "Category": "CGS-Direct Materials",
+       "Allocation": "CGS-Direct Materials"
+     },
+     {
+       "Code": 50010,
+       "Category": "CGS-Direct Materials",
+       "Allocation": "Growing Materials-Phase 1"
+     },
+     {
+       "Code": 50012,
+       "Category": "CGS-Direct Materials",
+       "Allocation": "Growing Materials-Phase 2"
+     },
+     {
+       "Code": 50020,
+       "Category": "CGS-Direct Materials",
+       "Allocation": "Extraction Materials"
+     },
+     {
+       "Code": 50022,
+       "Category": "CGS-Direct Materials",
+       "Allocation": "Extraction Processing"
+     },
+     {
+       "Code": 50030,
+       "Category": "CGS-Direct Materials",
+       "Allocation": "Dispersion"
+     },
+     {
+       "Code": 50040,
+       "Category": "CGS-Direct Materials",
+       "Allocation": "Cooking Materials"
+     },
+     {
+       "Code": 50090,
+       "Category": "CGS-Direct Materials",
+       "Allocation": "Packaging and Labels"
+     },
+     {
+       "Code": 50100,
+       "Category": "CGS-Direct Materials",
+       "Allocation": "Purchases for resale"
+     },
+     {
+       "Code": 50200,
+       "Category": "CGS-Direct Labor",
+       "Allocation": "CGS-Direct Labor"
+     },
+     {
+       "Code": 50210,
+       "Category": "CGS-Direct Labor",
+       "Allocation": "Salary and Wages-Position"
+     },
+     {
+       "Code": 50220,
+       "Category": "CGS-Direct Labor",
+       "Allocation": "Payroll taxes-Position"
+     },
+     {
+       "Code": 50230,
+       "Category": "CGS-Direct Labor",
+       "Allocation": "Fringe-Position"
+     },
+     {
+       "Code": 50240,
+       "Category": "CGS-Direct Labor",
+       "Allocation": "Workers Comp-Position"
+     },
+     {
+       "Code": 50250,
+       "Category": "CGS-Direct Labor",
+       "Allocation": "Salary and Wages-Position"
+     },
+     {
+       "Code": 50260,
+       "Category": "CGS-Direct Labor",
+       "Allocation": "Payroll taxes-Position"
+     },
+     {
+       "Code": 50270,
+       "Category": "CGS-Direct Labor",
+       "Allocation": "Fringe-Position"
+     },
+     {
+       "Code": 50280,
+       "Category": "CGS-Direct Labor",
+       "Allocation": "Workers Comp-Position"
+     },
+     {
+       "Code": 50290,
+       "Category": "CGS-Direct Labor",
+       "Allocation": "Contract Labor"
+     },
+     {
+       "Code": 50500,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "CGS-Indirect 1.471-11  c (2) (I)"
+     },
+     {
+       "Code": 50510,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Salaries and Wages - Indirect"
+     },
+     {
+       "Code": 50520,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Payroll taxes-Indirect"
+     },
+     {
+       "Code": 50530,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Fringe-Indirect"
+     },
+     {
+       "Code": 50540,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Workers Comp-Indirect"
+     },
+     {
+       "Code": 50550,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Tools and Equip not Capitalized"
+     },
+     {
+       "Code": 50552,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Equipment repair"
+     },
+     {
+       "Code": 50560,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "QC and Lab"
+     },
+     {
+       "Code": 50565,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Licensing"
+     },
+     {
+       "Code": 50570,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Materials and Supplies"
+     },
+     {
+       "Code": 50580,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Security System"
+     },
+     {
+       "Code": 50590,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Repairs and Maintenance"
+     },
+     {
+       "Code": 50610,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Electric"
+     },
+     {
+       "Code": 50620,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Water"
+     },
+     {
+       "Code": 50630,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Heat"
+     },
+     {
+       "Code": 50640,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Grow lighting"
+     },
+     {
+       "Code": 50650,
+       "Category": "CGS-Indirect 1.471-11  c (2) (I)",
+       "Allocation": "Rent"
+     },
+     {
+       "Code": 51000,
+       "Category": "CGS-Indirect 1.471-11  c (2) (III)",
+       "Allocation": "CGS-Indirect 1.471-11  c (2) (III)"
+     },
+     {
+       "Code": 51010,
+       "Category": "CGS-Indirect 1.471-11  c (2) (III)",
+       "Allocation": "Personal Property Taxes"
+     },
+     {
+       "Code": 51020,
+       "Category": "CGS-Indirect 1.471-11  c (2) (III)",
+       "Allocation": "Depreciation of Manufacturing Equip"
+     },
+     {
+       "Code": 51030,
+       "Category": "CGS-Indirect 1.471-11  c (2) (III)",
+       "Allocation": "Admin Costs for Production Activity"
+     },
+     {
+       "Code": 51040,
+       "Category": "CGS-Indirect 1.471-11  c (2) (III)",
+       "Allocation": "Member Salaries for Production Activity"
+     },
+     {
+       "Code": 51050,
+       "Category": "CGS-Indirect 1.471-11  c (2) (III)",
+       "Allocation": "Insurance for Production Activity"
+     },
+     {
+       "Code": 60010,
+       "Category": "Salaries and Wages",
+       "Allocation": "Salaries and Wages"
+     },
+     {
+       "Code": 60020,
+       "Category": "Payroll Expenses Taxes",
+       "Allocation": "Payroll Expenses Taxes"
+     },
+     {
+       "Code": 60030,
+       "Category": "Workers Comp",
+       "Allocation": "Workers Comp"
+     },
+     {
+       "Code": 60040,
+       "Category": "Payroll Processing",
+       "Allocation": "Payroll Processing"
+     },
+     {
+       "Code": 60050,
+       "Category": "Contract Labor",
+       "Allocation": "Contract Labor"
+     },
+     {
+       "Code": 60060,
+       "Category": "Training and Education",
+       "Allocation": "Training and Education"
+     },
+     {
+       "Code": 60070,
+       "Category": "Selling & Marketing",
+       "Allocation": "Selling & Marketing"
+     },
+     {
+       "Code": 60080,
+       "Category": "Insurance Expense",
+       "Allocation": "Insurance Expense"
+     },
+     {
+       "Code": 60110,
+       "Category": "Travel",
+       "Allocation": "Travel"
+     },
+     {
+       "Code": 60120,
+       "Category": "Meals and Entertainment",
+       "Allocation": "Meals and Entertainment"
+     },
+     {
+       "Code": 60130,
+       "Category": "Dues and Subscriptions",
+       "Allocation": "Dues and Subscriptions"
+     },
+     {
+       "Code": 60140,
+       "Category": "Office Supplies",
+       "Allocation": "Office Supplies"
+     },
+     {
+       "Code": 60150,
+       "Category": "Postage and Shipping",
+       "Allocation": "Postage and Shipping"
+     },
+     {
+       "Code": 60160,
+       "Category": "Consulting Expense",
+       "Allocation": "Consulting Expense"
+     },
+     {
+       "Code": 60170,
+       "Category": "Accounting Fees",
+       "Allocation": "Accounting Fees"
+     },
+     {
+       "Code": 60180,
+       "Category": "Legal Fees",
+       "Allocation": "Legal Fees"
+     },
+     {
+       "Code": 60185,
+       "Category": "Licensing",
+       "Allocation": "Licensing"
+     },
+     {
+       "Code": 60190,
+       "Category": "Rent",
+       "Allocation": "Rent"
+     },
+     {
+       "Code": 60195,
+       "Category": "Property Tax",
+       "Allocation": "Property Tax"
+     },
+     {
+       "Code": 60210,
+       "Category": "Depreciation Expense",
+       "Allocation": "Depreciation Expense"
+     },
+     {
+       "Code": 60220,
+       "Category": "Amortization Expense",
+       "Allocation": "Amortization Expense"
+     },
+     {
+       "Code": 60310,
+       "Category": "Repairs and Maintenance",
+       "Allocation": "Repairs and Maintenance"
+     },
+     {
+       "Code": 60320,
+       "Category": "Utilities - Electric",
+       "Allocation": "Utilities - Electric"
+     },
+     {
+       "Code": 60330,
+       "Category": "Utilities - Heat",
+       "Allocation": "Utilities - Heat"
+     },
+     {
+       "Code": 60340,
+       "Category": "Utilities - Water",
+       "Allocation": "Utilities - Water"
+     },
+     {
+       "Code": 60350,
+       "Category": "Utilites - Computer & Internet Exp",
+       "Allocation": "Utilites - Computer & Internet Exp"
+     },
+     {
+       "Code": 60360,
+       "Category": "Utilities - Telephone Expense",
+       "Allocation": "Utilities - Telephone Expense"
+     },
+     {
+       "Code": 60410,
+       "Category": "Moving Expenses",
+       "Allocation": "Moving Expenses"
+     },
+     {
+       "Code": 60420,
+       "Category": "Miscellaneous Expense",
+       "Allocation": "Miscellaneous Expense"
+     },
+     {
+       "Code": 69000,
+       "Category": "Ask CPA",
+       "Allocation": "Ask CPA"
+     },
+     {
+       "Code": 70000,
+       "Category": "Other Income Expense",
+       "Allocation": "Other Income Expense"
+     },
+     {
+       "Code": 70010,
+       "Category": "Other Income Expense",
+       "Allocation": "Other Income"
+     },
+     {
+       "Code": 70020,
+       "Category": "Other Income Expense",
+       "Allocation": "Interest Expense"
+     },
+     {
+       "Code": 70030,
+       "Category": "Other Income Expense",
+       "Allocation": "Bank Charges"
+     },
+     {
+       "Code": 70110,
+       "Category": "Other Income Expense",
+       "Allocation": "Other Expense"
+     }
+    ]

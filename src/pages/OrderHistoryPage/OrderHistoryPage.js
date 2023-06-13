@@ -2,11 +2,11 @@ import styles from './OrderHistoryPage.module.scss';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as ordersAPI from '../../utilities/order-api';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
+
 import OrderList from '../../components/OrderList/OrderList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 
-export default function OrderHistoryPage({ user, setUser }) {
+export default function OrderHistoryPage({  }) {
   /*--- State --- */
   const [orders, setOrders] = useState([]);
   const [activeOrder, setActiveOrder] = useState(null);
@@ -33,7 +33,7 @@ export default function OrderHistoryPage({ user, setUser }) {
     <main className={styles.OrderHistoryPage}>
       <aside className={styles.aside}>
         <Link to="/orders/new" className="button btn-sm">NEW ORDER</Link>
-        <UserLogOut user={user} setUser={setUser} />
+
       </aside>
       <OrderList
         orders={orders}

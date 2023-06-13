@@ -1,4 +1,4 @@
-import styles from './OrderListItem.scss';
+import styles from './OrderListItem.module.scss';
 import Card from 'react-bootstrap/Card';
  
 export default function OrderListItem({ order, isSelected, handleSelectOrder }) {

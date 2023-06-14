@@ -1,62 +1,62 @@
 require('dotenv').config()
-const Item = require('../../models/itemSchema')
+const Inventory = require('../../models/inventorySchema')
 
-const destroyItem = async (req, res, next) => {
+const destroyInventory = async (req, res, next) => {
     try {
-        const deletedItem = await Item.findByIdAndDelete(req.params.id)
-        res.locals.data.item = deletedItem
+        const deletedInventory = await Inventory.findByIdAndDelete(req.params.id)
+        res.locals.data.inventory = deletedInventory
         next()
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }
 }
 
-const updateItem = async (req, res, next) => {
+const updateInventory = async (req, res, next) => {
     try {
-        const updatedItem = await Item.findByIdAndUpdate(req.params.id, req.body, { new: true })
-        res.locals.data.item = updatedItem
+        const updatedInventory = await Inventory.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        res.locals.data.inventory = updatedInventory
         next()
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }
 }
 
-const createItem = async (req, res, next) => {
+const createInventory = async (req, res, next) => {
     try {
-        const createdItem = await Item.create(req.body)
+        const createdInventory = await Inventory.create(req.body)
 
-        res.locals.data.item = createdItem
+        res.locals.data.inventory = createdInventory
         next()
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }
 }
 
-const getItems= async (req, res, next) => {
+const getInventorys= async (req, res, next) => {
     try {
         
-        const items = await Item.find(req.body)
-        res.locals.data.items = items 
+        const inventorys = await Inventory.find(req.body)
+        res.locals.data.inventorys = inventorys 
         next()
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }
 }
 
-const respondWithItems = (req, res) => {
-    res.json(res.locals.data.items)
+const respondWithInventorys = (req, res) => {
+    res.json(res.locals.data.inventorys)
 }
-const respondWithItem = (req, res) => {
-    res.json(res.locals.data.item)
+const respondWithInventory = (req, res) => {
+    res.json(res.locals.data.inventory)
 }
 
 
 
 module.exports = {
-    destroyItem,
-    updateItem,
-    createItem,
-    getItems,
-    respondWithItem, 
-    respondWithItems
+    destroyInventory,
+    updateInventory,
+    createInventory,
+    getInventorys,
+    respondWithInventory, 
+    respondWithInventorys
 }

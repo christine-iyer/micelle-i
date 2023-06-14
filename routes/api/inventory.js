@@ -1,10 +1,10 @@
 const router = require('express').Router()
-const itemCtrl = require('../../controllers/api/inventory')
+const inventoryCtrl = require('../../controllers/api/inventory')
 
-router.delete('/:id', itemCtrl.destroyItem, itemCtrl.respondWithItem)
-router.put('/:id', itemCtrl.updateItem, itemCtrl.respondWithItem)
-router.post('/', itemCtrl.createItem, itemCtrl.respondWithItem)
-router.get('/:id', itemCtrl.getItems, itemCtrl.respondWithItem)
-router.get('/', itemCtrl.getItems, itemCtrl.respondWithItems)
+router.delete('/:id', inventoryCtrl.destroyInventory, inventoryCtrl.respondWithInventory)
+router.put('/:id', inventoryCtrl.updateInventory, inventoryCtrl.respondWithInventory)
+router.post('/', inventoryCtrl.createInventory, inventoryCtrl.respondWithInventory)
+router.get('/:id', inventoryCtrl.getInventorys, inventoryCtrl.respondWithInventory)
+router.get('/', inventoryCtrl.getInventorys, inventoryCtrl.respondWithInventorys)
 
 module.exports = router

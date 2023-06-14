@@ -8,7 +8,8 @@ import Expenses from '../../pages/Expenses'
 import NewPatient from '../../pages/NewPatient';
 import NewItem from '../../pages/NewItem'
 import Table from '../../pages/Table'
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom"
+import Inventory from '../../pages/Inventory'
 
 import makeData from '../../makeData';
 import Bar from '../../components/Bar/Bar';
@@ -35,7 +36,7 @@ function App() {
             <Route path="/inventorys" element={<NewItem />} />
            <Route path="/newaccts" element={<NewAccount />} />
             <Route path="/newpts" element={<NewPatient />} />
-            {/* <Route path="/rando" element={<Inventory />} />*/}
+            <Route path="/rando" element={<Inventory />} />
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
           </Routes> 

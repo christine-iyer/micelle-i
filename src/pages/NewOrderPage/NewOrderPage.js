@@ -14,6 +14,10 @@ export default function NewOrderPage({  }) {
   const categoriesRef = useRef([]);
   const navigate = useNavigate();
 
+  
+
+
+
   useEffect(function() {
     async function getItems() {
       const items = await itemsAPI.getAll();

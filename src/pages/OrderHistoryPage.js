@@ -1,21 +1,27 @@
 import styles from './OrderHistoryPage.module.scss';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import * as ordersAPI from '../../utilities/order-api';
+
 
 import OrderList from '../../components/OrderList/OrderList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
+
+
 
 export default function OrderHistoryPage({ }) {
   /*--- State --- */
   const [orders, setOrders] = useState([]);
   const [activeOrder, setActiveOrder] = useState(null);
 
+  function getOrderHistory() {
+    return sendRequest('/api/orders/history');
+  }
+
   /*--- Side Effects --- */
   useEffect(function () {
     // Load previous orders (paid)
     async function fetchOrderHistory() {
-      const orders = await ordersAPI.getOrderHistory();
+      const orders = await getOrderHistory();
       setOrders(orders);
       // If no orders, activeOrder will be set to null below
       setActiveOrder(orders[0] || null);

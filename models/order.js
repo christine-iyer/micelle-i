@@ -16,7 +16,7 @@ lineItemSchema.virtual('extPrice').get(function() {
 });
 
 const orderSchema = new Schema({
-  user: { type: Schema.Types.ObjectId, ref: 'User' },
+  // user: { type: Schema.Types.ObjectId, ref: 'User' },
   lineItems: [lineItemSchema],
   isPaid: { type: Boolean, default: false }
 }, {
@@ -37,12 +37,12 @@ orderSchema.virtual('orderId').get(function() {
 });
 
 orderSchema.statics.getCart = function(userId) {
-  // 'this' is the Order model
+  // 'this' is the Order model user: userId, 
   return this.findOneAndUpdate(
     // query
-    { user: userId, isPaid: false },
+    { isPaid: false },
     // update
-    { user: userId },
+    // { user: userId },
     // upsert option will create the doc if
     // it doesn't exist
     { upsert: true, new: true }

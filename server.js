@@ -5,7 +5,7 @@ require('./config/database')
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 
 const app = express();
 

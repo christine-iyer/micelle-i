@@ -24,14 +24,14 @@ fields, so the main user can do admin stuff.
 
 ### Plan
 
-| Page      | Eval | Done     |MicroTasks|
-| :---        |    :----:   |:----:   |          ---: |
-| Table      | The table seems to serve no purpose. Aside from the example of an editable table I wanted to share with Stewart (he said he wanted to be able to make quick edits), it has no functionality. It simply resets the data. It is not connected to  the database.       | &#9744;    |Micro List! <ul><li>Item one. &#9744;</li><li>Item two. &#9744;</li></ul>     |
-| Revenue   | The revenue tab works in that it collects data for the database and displays it. Stewart would like this database to be populated so that input fields are pre-populated to minimize user errors. This database is the actual store. Photos of products need to be captured. Meaning the model needs an image field. And the page needs image functionality.        | &#9744;        |Micro List! <ul><li>Item one. &#9744;</li><li>Item two. &#9744;</li></ul>     |
-| Expense      | The expense page works in a similair way, however Stewart wants this customer data to be hardcoded in to prepopulate user input fields.       | &#9744;    |Micro List! <ul><li>Item one. &#9744;</li><li>Item two. &#9744;</li></ul>     |
-| New Account   | The new Account page does all of this, making the expense page unnecessary.        | &#9744;       |Micro List! <ul><li>Item one. &#9744;</li><li>Item two. &#9744;</li></ul>     |
-| New Patient   | The new patient fields should go into the user model. They can be optional fields, so the main user can do admin stuff.        | &#9744;      |Micro List! <ul><li>Item one. &#9744;</li><li>Item two. &#9744;</li></ul>     |
-| New Blah   | The new blah fields should go into the user model. TPractuce, so the main user trya and get it lorum.        | &#9744;    |   Micro List! <ul><li>Item one. &#9744;</li><li>Item two. &#9744;</li></ul>     |
+| Page      | Eval |MicroTasks|
+| :---        |    :----:     |          ---: |
+| Table      | The table seems to serve no purpose. Aside from the example of an editable table I wanted to share with Stewart (he said he wanted to be able to make quick edits), it has no functionality. It simply resets the data. It is not connected to  the database.          |<ul>&#9744;Item one &#9744;Item two </ul>     |
+| Revenue   | The revenue tab works in that it collects data for the database and displays it. Stewart would like this database to be populated so that input fields are pre-populated to minimize user errors. This database is the actual store. Photos of products need to be captured. Meaning the model needs an image field. And the page needs image functionality.               |<ul>&#9744;Item one &#9744;Item two </ul> |
+| Expense      | The expense page works in a similair way, however Stewart wants this customer data to be hardcoded in to prepopulate user input fields.          |<ul>&#9744;Item one &#9744;Item two </ul> |
+| New Account   | The new Account page does all of this, making the expense page unnecessary.              |<ul>&#9744;Item one &#9744;Item two </ul>    |
+| New Patient   | The new patient fields should go into the user model. They can be optional fields, so the main user can do admin stuff.             |<ul>&#9744;Item one &#9744;Item two </ul>   |
+| New Blah   | The new blah fields should go into the user model. TPractuce, so the main user trya and get it lorum.           |   <ul>&#9744;Item one &#9744;Item two </ul>     |
 
 
 # Getting Started with Create React App

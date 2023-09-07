@@ -1,4 +1,41 @@
+September 7, 2023
+
+QUICK EVAL: 
+
+The first page is a table. The table seems to serve no purpose. 
+Aside from the example of an editable table I wanted to share with 
+Stewart (he said he wanted to be able to make quick edits), it has no 
+functionality. It simply resets the data. It is not connected to  the
+database. 
+
+
+
+The revenue tab works in that it collects data for the database and 
+displays it. Stewart would like this database to be populated so that 
+input fields are pre-populated to minimize user errors. This database is 
+the actual store. Photos of products need to be captured. Meaning the model
+needs an image field. And the page needs image functionality. 
+The expense page works in a similair way, however Stewart wants this 
+customer data to be hardcoded in to prepopulate user input fields.
+The new Account page does all of this, making the expense page unnecessary.
+The new patient fields should go into the user model. They can be optional
+fields, so the main user can do admin stuff.
+
+
+### Plan
+
+| Page      | Eval | Done     |
+| :---        |    :----:   |          ---: |
+| Table      | The table seems to serve no purpose. Aside from the example of an editable table I wanted to share with Stewart (he said he wanted to be able to make quick edits), it has no functionality. It simply resets the data. It is not connected to  the database.       | - [ ]   |
+| Revenue   | The revenue tab works in that it collects data for the database and displays it. Stewart would like this database to be populated so that input fields are pre-populated to minimize user errors. This database is the actual store. Photos of products need to be captured. Meaning the model needs an image field. And the page needs image functionality.        | - [ ]       |
+| Expense      | The expense page works in a similair way, however Stewart wants this customer data to be hardcoded in to prepopulate user input fields.       | - [ ]   |
+| New Account   | The new Account page does all of this, making the expense page unnecessary.        | - [ ]       |
+| New Patient   | The new patient fields should go into the user model. They can be optional fields, so the main user can do admin stuff.        | :x:     |
+
 # Getting Started with Create React App
+
+- [ ] uncheck
+- [x] check
 
 ```js
 export default function CreateBookmark ({

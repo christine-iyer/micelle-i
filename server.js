@@ -33,8 +33,8 @@ app.use('/api/revenues', require('./routes/api/revenue'))
 app.use('/api/newaccts', require('./routes/api/newaccts'))
 app.use('/api/newpts', require('./routes/api/newpts'))
 app.use('/api/inventorys', require('./routes/api/inventory'))
-app.use('/api/items',  require('./routes/api/items'));
-app.use('/api/orders',  require('./routes/api/orders'));
+// app.use('/api/items',  require('./routes/api/items'));
+// app.use('/api/orders',  require('./routes/api/orders'));
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
 app.get('/*', function(req, res) {

@@ -23,10 +23,6 @@ export default function Bar(props) {
         <h1>Expense</h1>
       </Link>
       &nbsp;  🤡🤡 &nbsp;
-      <Link to="/orders">
-        <h1>Order History</h1>
-      </Link>
-      &nbsp;  🤖🤖 &nbsp;
       <Link to="/newaccts">
         <h1>New Account</h1>
       </Link>
@@ -34,13 +30,8 @@ export default function Bar(props) {
       <Link to="/newpts">
         <h1>New Patient</h1>
       </Link>
-      &nbsp;  🧞‍♂️🧜🏿‍♀️ &nbsp;
-      <Link to="/orders/new">
-        <h1>New Orders</h1>
-      </Link>
-      &nbsp;  🧞‍♂️🧜🏿‍♀️ &nbsp;
+ &nbsp;  🧞‍♂️🧜🏿‍♀️ &nbsp;
 </Nav>
-
 </Container>
 </Navbar>
 </>

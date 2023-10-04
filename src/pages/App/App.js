@@ -6,7 +6,7 @@ import Revenue from '../../pages/Revenue'
 import Expenses from '../../pages/Expenses'
 import NewPatient from '../../pages/NewPatient';
 import NewItem from '../../pages/NewItem'
-import Table from '../../pages/Table'
+import TableCell from '../../components/Table/TableCell'
 import { Routes, Route, BrowserRouter } from "react-router-dom"
 import Inventory from '../../pages/Inventory'
 import makeData from '../../makeData';
@@ -22,7 +22,7 @@ function App() {
         <BrowserRouter>
           <Bar />
           <Routes>
-            <Route path="/" element={<Table />}/>
+            <Route path="/" element={<TableCell />}/>
             <Route path="/expenses" element={<Expenses />} />
             <Route path="/revenues" element={<Revenue />} />
             <Route path="/inventorys" element={<NewItem />} />

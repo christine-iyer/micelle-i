@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export const COLUMNS = [
     {
@@ -47,9 +47,13 @@ export default function NewAccts() {
         zip: '',
         description: ''
     })
+    const ref = useRef(null)
+    const inputRef = useRef(null)
+    
     const handleChange = (evt) => {
         setNewacct({ ...newacct, [evt.target.name]: evt.target.value })
     }
+
 
     // index
     const getNewAccts = async () => {
@@ -84,10 +88,11 @@ export default function NewAccts() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ ...updatedData })
+                body: JSON.stringify({ updatedData })
             })
             const data = await response.json()
             setFoundNewacct(data)
+            const foundNewaccts
         } catch (error) {
             console.error(error)
         }

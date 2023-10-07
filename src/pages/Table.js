@@ -1,6 +1,5 @@
 import React from 'react'
 import { Box, Heading } from "@chakra-ui/react";
-import TaskTable from "../components/TanStack/components/TaskTable"
 import styled from 'styled-components'
 import { useTable, usePagination } from 'react-table'
 
@@ -302,7 +301,7 @@ export default function EditableTable() {
 
   return (
     <>
-    <TaskTable />
+
 
 
     <Styles>

@@ -8,12 +8,12 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import DATA from "../data";
-import EditableCell from "./EditableCell";
-import StatusCell from "./StatusCell";
-import DateCell from "./DateCell";
-import Filters from "./Filters";
-import SortIcon from "./icons/SortIcon";
+import DATA from "../components/TanStack/data";
+import EditableCell from "../components/TanStack/components/EditableCell";
+import StatusCell from "../components/TanStack/components/StatusCell";
+import DateCell from "../components/TanStack/components/DateCell";
+import Filters from "../components/TanStack/components/Filters";
+import SortIcon from "../components/TanStack/components/icons/SortIcon";
 
 const columns = [
   {

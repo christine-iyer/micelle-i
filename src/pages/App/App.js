@@ -11,6 +11,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom"
 import Inventory from '../../pages/Inventory'
 import makeData from '../../makeData';
 import Bar from '../../components/Bar/Bar';
+import TaskTable from '../TaskTable';
 
 function App() {
   const data = React.useMemo(() => makeData(20), [])

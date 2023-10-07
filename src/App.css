@@ -76,7 +76,7 @@ table {
 } 
 
 th {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid red;
 }
 
 td {
@@ -104,4 +104,5 @@ th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
 

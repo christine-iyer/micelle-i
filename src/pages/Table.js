@@ -1,16 +1,15 @@
 import React from 'react'
-import { Box, Heading } from "@chakra-ui/react";
 import styled from 'styled-components'
 import { useTable, usePagination } from 'react-table'
 
-import makeData from '../makeData'
+import saleItems from '../makeData'
 
 const Styles = styled.div`
   padding: 1rem;
 
   table {
     border-spacing: 0;
-    border: 1px solid black;
+    border: 11px solid red;
 
     tr {
       :last-child {
@@ -24,8 +23,8 @@ const Styles = styled.div`
     td {
       margin: 0;
       padding: 0.5rem;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
+      border-bottom: 1px solid pink;
+      border-right: 1px solid pink;
 
       :last-child {
         border-right: 0;
@@ -36,7 +35,7 @@ const Styles = styled.div`
         padding: 0;
         margin: 0;
         border: 0;
-        color: "blue";
+        background-color: antiquewhite;
       }
     }
   }
@@ -262,7 +261,7 @@ export default function EditableTable() {
     []
   )
 
-  const [data, setData] = React.useState(() => makeData(20))
+  const [data, setData] = React.useState(() => [saleItems])
   const [originalData] = React.useState(data)
   const [skipPageReset, setSkipPageReset] = React.useState(false)
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from '../src/pages/App/App';
+import App from '../src/App';
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "./components/TanStack/theme/theme";
 import reportWebVitals from './reportWebVitals';

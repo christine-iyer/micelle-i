@@ -1,3 +1,6 @@
+October 9, 2023
+
+Been working for the past day to try and get a basic understandingof tables in react. Specifically tan-stack. Have a great [instructional video](https://www.youtube.com/watch?v=CjqG277Hmgg)   as well as a [cloned code-sandbox](https://codesandbox.io/p/sandbox/table-chakra-ui-t8r5p2?file=%2Fsrc%2Fpages%2Fposts%2Fcreate.tsx%3A1%2C1) using the same tools. 
 September 7, 2023
 
 QUICK EVAL: 

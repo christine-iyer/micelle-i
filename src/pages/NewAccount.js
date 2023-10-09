@@ -92,7 +92,6 @@ export default function NewAccts() {
             })
             const data = await response.json()
             setFoundNewacct(data)
-            const foundNewaccts
         } catch (error) {
             console.error(error)
         }

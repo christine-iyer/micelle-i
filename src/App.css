@@ -79,7 +79,7 @@ th {
   border-bottom: 1px solid red;
 }
 
-td {
+thead {
   text-align: center;
 }
 table tbody tr td {

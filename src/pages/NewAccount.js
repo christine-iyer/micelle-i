@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import './../App.css'
 
 export const COLUMNS = [
     {

@@ -88,7 +88,7 @@ export default function NewPatient() {
         idType: '',
         idState: '',
         medCardState: '',
-        images: ''
+        images: []
  })
     } catch (error) {
       console.error(error)
@@ -127,7 +127,7 @@ export default function NewPatient() {
       idType: '',
       idState: '',
       medCardState: '',
-      images: result?.info?.secure_url
+      images: [result?.info?.secure_url]
 
   })
 }

@@ -10,6 +10,7 @@ import Table from './pages/Table'
 import { Routes, Route, BrowserRouter } from "react-router-dom"
 import Inventory from './pages/Inventory'
 import Bar from './components/Bar/Bar';
+import ImageGallery from './pages/ImageGallery'
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         <BrowserRouter>
           <Bar />
           <Routes>
-            <Route path="/" element={<Table />}/>
+            <Route path="/" element={<ImageGallery />}/>
             <Route path="/expenses" element={<Expenses />} />
             <Route path="/revenues" element={<Revenue />} />
             <Route path="/inventorys" element={<NewItem />} />

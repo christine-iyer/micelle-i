@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useTable, usePagination } from 'react-table'
 
-import saleItems from '../makeData'
+import saleItems from '../MakeData'
 
 const Styles = styled.div`
   padding: 1rem;

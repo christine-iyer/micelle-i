@@ -1,4 +1,4 @@
-const strains= [
+export const strains= [
   {
     product: "Raw Flower",
     detail: "R4",

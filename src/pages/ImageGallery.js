@@ -21,7 +21,7 @@ export default function Gallery() {
   let sculpture = strains[index];
   return (
     <>
-      <button onClick={handleNextClick}>
+      <button style={{'borderColor': 'red'}}onClick={handleNextClick}>
         Next
       </button>
       <h2>

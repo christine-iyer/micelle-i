@@ -211,7 +211,8 @@ export default function NewPatient() {
       }
 
 {
-                newpts && newpts.length ? (<ul>
+                newpts && newpts.length ? (
+                <ul>
                     {
                         newpts.map((newpt) => {
                             return (

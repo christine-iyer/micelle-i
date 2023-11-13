@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { strains } from '../MakeData';
+import '../index.css';
 
 export default function Gallery() {
   const [index, setIndex] = useState(0);
@@ -21,7 +22,7 @@ export default function Gallery() {
   let sculpture = strains[index];
   return (
     <>
-      <button style={{'borderColor': 'red'}}onClick={handleNextClick}>
+      <button className="button" style={{borderColor: 'red'}}onClick={handleNextClick}>
         Next
       </button>
       <h2>
@@ -31,8 +32,8 @@ export default function Gallery() {
       <h3>
         ({index + 1} of {strains.length})
       </h3>
-      <button onClick={handleMoreClick}>
-        {showMore ? 'Hide' : 'Show'} details
+      <button onClick={handleMoreClick} style={{borderStyle: "double"}}>
+        {showMore ? 'Hide' : 'Show'} Details
       </button>
       {showMore && <p>{sculpture.unitMeasure}</p>}
       <img

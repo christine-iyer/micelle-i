@@ -86,7 +86,7 @@ thead {
 table tbody tr td {
   border-width: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: yellow;
 } 
 
 /* index.css */

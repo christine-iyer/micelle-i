@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import { Cloudinary } from "@cloudinary/url-gen";
-import UploadWidget from '../components/MicroComponents/UploadWidget';
 import "bootstrap/dist/css/bootstrap.min.css";
 export default function NewItem() {
   const [inventorys, setInventorys] = useState([])
@@ -25,7 +23,7 @@ export default function NewItem() {
     setInventory({ ...inventory, [evt.target.name]: evt.target.value })
   }
 
-const columns = ['name', 'strain', 'productCategory', 'inventoryName', 'itemDetail', 'unitMeasure', 'unitOnHand', 'targetQuantity', 'unitCost', 'plantOriginDate', 'plantOrigin','plantStage' ]
+  const columns = ['name', 'strain', 'productCategory', 'inventoryName', 'itemDetail', 'unitMeasure', 'unitOnHand', 'targetQuantity', 'unitCost', 'plantOriginDate', 'plantOrigin', 'plantStage']
 
   // index
   const getInventorys = async () => {
@@ -144,27 +142,9 @@ const columns = ['name', 'strain', 'productCategory', 'inventoryName', 'itemDeta
   }
   return (
     <>
-      <UploadWidget onUpload={handleOnUpload}>
-        {({ open }) => {
-          function handleOnClick(e) {
-            e.preventDefault();
-            open();
-          }
-          return (
-            <button onClick={handleOnClick}>
-              Upload an Image
-            </button>
-          )
-        }}
-      </UploadWidget>
-      {error && <p>{error}</p>}
-      {url && (
-        <div key={url._id} className='card' style={{ width: '18rem' }}
-        >
-          <img variant="top" src={url} id="uploadedimage"  ></img>
-          <p className="url">{url}</p>
-        </div>
-      )}
+      
+     
+    
       {'New Item Name'}<input value={inventory.name} onChange={handleChange} name="name"></input><br />
       {'Strain '}<select
         value={inventory.strain}
@@ -273,20 +253,20 @@ const columns = ['name', 'strain', 'productCategory', 'inventoryName', 'itemDeta
           <h2>{foundInventory.plantStage}</h2>
 
           <>
-            
+
 
           </>
 
 
         </div> : <>  </>
       }
-            {
+      {
         inventorys && inventorys.length ? (<>
           {
             inventorys.map((inventory, row) => {
               return (
-                <table key = {inventory._id}>
-                  <th key = {columns._id}>{columns._id}</th>
+                <table key={inventory._id}>
+                  <th key={columns._id}>{columns._id}</th>
 
 
 
@@ -305,11 +285,11 @@ const columns = ['name', 'strain', 'productCategory', 'inventoryName', 'itemDeta
                   <td>{inventory.plantOriginDate}</td>
 
 
-                  
+
                   {inventory.name} is {inventory.strain} {inventory.newPlant ? 'one of our plants' : 'its processed with love'}
                   <br />
-                  {/* <button onClick={() => deleteInventory(inventory._id)}>Delete Inventory </button>
-                  <button onClick={() => updateInventory(inventory._id)}>EditInventory </button> */}
+                  <button onClick={() => deleteInventory(inventory._id)}>Delete Inventory </button>
+                  <button onClick={() => updateInventory(inventory._id)}>EditInventory </button>
                 </table>
               )
             })

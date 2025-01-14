@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { strains } from '../MakeData';
+import { strains } from '../MakeData.js';
 import '../App.css'
 
 export default function Gallery() {

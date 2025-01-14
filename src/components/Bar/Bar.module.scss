@@ -1,8 +1,30 @@
-.nav {
-     text-decoration: double;
-     color: var(--blue-1);
-     font-size: 33px;
-     * {
-          color: var(--blue-2);
-     }
+.navbar {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 10px 20px;
+     background-color: adjust-hue($color: #9cb209, $degrees: 0);
+     border-bottom: 1px solid #ddd;
+}
+.navList{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #e3e9bf;
+}
+.navItem{
+     font-size: 1.2rem;
+     display: flex;
+     align-items: center
+}
+.navItem a {
+     text-decoration: none;
+     color: #b0d3eb;
+     font-weight: bold;
+     margin-left: 8px;
+}
+.navItem a:hover {
+     color: #007bff;
 }

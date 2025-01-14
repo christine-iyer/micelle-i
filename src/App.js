@@ -1,6 +1,5 @@
 import React from 'react'
 import { Routes, Route, BrowserRouter } from "react-router-dom"
-import 'bootstrap/dist/css/bootstrap.min.css';
 import NewAccount from './pages/NewAccount'
 import Revenue from './pages/Revenue'
 import Expenses from './pages/Expenses'

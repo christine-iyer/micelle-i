@@ -1,19 +1,27 @@
 .image-container {
   position: relative;
-  width: 100%;
-  height:auto;
+  width: 60%; /* Adjust to your desired width */
+  max-width: 400px; /* Optional, to further limit the size */
+  margin: 0 auto; /* Center the container */
   overflow: hidden;
+  border: 2px solid lightgray; /* Optional, for styling */
+  border-radius: 8px; /* Optional, for rounded corners */
 }
-image-container img {
+
+.image-container img {
   width: 100%;
-  height: auto;
+  height: auto; /* Maintain aspect ratio */
   opacity: 1;
   transform: scale(1);
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
+
+.image-container img.fade-out {
+  opacity: 0;
+  transform: scale(1.1); /* Add a subtle zoom-out effect on fade-out */
+}
+
 .image-container img.fade-in {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1); /* Reset scaling */
 }
-
-

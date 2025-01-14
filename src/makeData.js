@@ -272,7 +272,7 @@ export const strains= [
   {
     product: "Tinctures-Base Oil",
     detail: "Chaga",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/sunset-sherbert.jpg",
     unitMeasure: "oz",
     unitsAvailable: "",
     unitCost: "-",
@@ -282,7 +282,7 @@ export const strains= [
   {
     product: "Topicals",
     detail: "Garden of Bloom",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/granddaddy-purple.png",
     unitMeasure: "oz",
     unitsAvailable: "2.00",
     unitCost: "-",
@@ -292,7 +292,7 @@ export const strains= [
   {
     product: "Topicals",
     detail: "Garden of Peace",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/white-widow.png",
     unitMeasure: "oz",
     unitsAvailable: "5.00",
     unitCost: "-",
@@ -302,7 +302,7 @@ export const strains= [
   {
     product: "Topicals",
     detail: "Lip Lover",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/purple-kush.jpg",
     unitMeasure: "oz",
     unitsAvailable: "50.00",
     unitCost: "-",
@@ -312,7 +312,7 @@ export const strains= [
   {
     product: "Topicals",
     detail: "Massage Oil Cream",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/mango-kush.jpg",
     unitMeasure: "oz",
     unitsAvailable: "",
     unitCost: "-",
@@ -322,7 +322,7 @@ export const strains= [
   {
     product: "Topicals",
     detail: "No 10",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/qjyKHW2TqXlzjGJyJoMA_ORANGE%20COOKIES-191-edited.jpg",
     unitMeasure: "oz",
     unitsAvailable: "2.00",
     unitCost: "-",
@@ -332,7 +332,7 @@ export const strains= [
   {
     product: "Topicals",
     detail: "Therapeutic Touch",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/lemon-cake.jpg",
     unitMeasure: "oz",
     unitsAvailable: "2.00",
     unitCost: "-",
@@ -342,7 +342,7 @@ export const strains= [
   {
     product: "Topicals",
     detail: "Soaps",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/lemon-kush.jpg",
     unitMeasure: "each",
     unitsAvailable: "12.00",
     unitCost: "-",
@@ -352,7 +352,7 @@ export const strains= [
   {
     product: "Topicals",
     detail: "TLC Cream Small",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/9-pound-hammer.jpg",
     unitMeasure: "oz",
     unitsAvailable: "22.00",
     unitCost: "-",
@@ -362,7 +362,7 @@ export const strains= [
   {
     product: "Topicals",
     detail: "TLC Cream Large",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/z8wRmqFPQcOrn4aDu9Vv_GOD'S%20GIFT-234-edited.jpg",
     unitMeasure: "oz",
     unitsAvailable: "",
     unitCost: "-",
@@ -372,7 +372,7 @@ export const strains= [
   {
     product: "Topicals",
     detail: "Bath Balms sm",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/LEMON-OG-051-2.jpg.jpg",
     unitMeasure: "oz",
     unitsAvailable: "1.00",
     unitCost: "-",
@@ -382,7 +382,7 @@ export const strains= [
   {
     product: "Topicals",
     detail: "Bath Balms lg",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/true-og.jpg",
     unitMeasure: "oz",
     unitsAvailable: "",
     unitCost: "-",
@@ -392,7 +392,7 @@ export const strains= [
   {
     product: "Marshmallows",
     detail: "Indica",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/white-tahoe-cookies.jpg",
     unitMeasure: "each",
     unitsAvailable: "44.00",
     unitCost: "-",
@@ -402,7 +402,7 @@ export const strains= [
   {
     product: "Marshmallows",
     detail: "Sative",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/sour-tangie.jpg",
     unitMeasure: "each",
     unitsAvailable: "73.00",
     unitCost: "-",
@@ -412,7 +412,7 @@ export const strains= [
   {
     product: "Marshmallows",
     detail: "CBG",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/blue-diesel.jpg",
     unitMeasure: "each",
     unitsAvailable: "",
     unitCost: "-",

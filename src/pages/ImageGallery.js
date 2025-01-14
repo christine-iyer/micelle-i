@@ -1,11 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { strains } from '../MakeData';
-import '../index.css';
+import '../App.css'
 
 export default function Gallery() {
   const [index, setIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
+  const [ fadeClass, setFadeClass]= useState('')
+
   const hasNext = index < strains.length - 1;
+
+  useEffect(() => {
+    // Add the fade-out class before the image changes
+    setFadeClass('fade-out');
+
+    const timeout = setTimeout(() => {
+      setFadeClass('fade-in');
+    }, 500); // Match the duration of the CSS transition
+
+    return () => clearTimeout(timeout); // Cleanup timeout
+  }, [index]);
+
 
   function handleNextClick() {
     if (hasNext) {
@@ -22,7 +36,10 @@ export default function Gallery() {
   let sculpture = strains[index];
   return (
     <>
-      <button className="button" style={{borderColor: 'red'}}onClick={handleNextClick}>
+      <button 
+      className="button" 
+      style={{borderColor: 'red'}}
+      onClick={handleNextClick}>
         Next
       </button>
       <h2>
@@ -36,10 +53,14 @@ export default function Gallery() {
         {showMore ? 'Hide' : 'Show'} Details
       </button>
       {showMore && <p>{sculpture.unitMeasure}</p>}
+
+      <div className="image-container">
       <img
         src={sculpture.image}
         alt={sculpture.product}
+        className={fadeClass}
       />
+      </div>
     </>
   );
 }

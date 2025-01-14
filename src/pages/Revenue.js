@@ -155,10 +155,10 @@ export default function Revenues() {
           {
             revenues.map((revenue) => {
               return (
-                <p key={revenue._id}>
+                <li key={revenue._id}>
                   {revenue.accountReceivable} is {revenue.unitMeasure} {revenue.barter ? 'Barter' : 'Cash'}
                   
-                </p>
+                </li>
               )
             })
           }

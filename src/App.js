@@ -1,11 +1,11 @@
 import React from 'react'
+import { Routes, Route, BrowserRouter } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NewAccount from './pages/NewAccount'
 import Revenue from './pages/Revenue'
 import Expenses from './pages/Expenses'
 import NewPatient from './pages/NewPatient';
 import NewItem from './pages/NewItem'
-import { Routes, Route, BrowserRouter } from "react-router-dom"
 import Inventory from './pages/Inventory'
 import Bar from './components/Bar/Bar';
 import ImageGallery from './pages/ImageGallery'

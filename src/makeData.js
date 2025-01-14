@@ -12,7 +12,7 @@ export const strains= [
   {
     product: "Raw Flower",
     detail: "ACDC",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/gelato.jpg",
     unitMeasure: "oz",
     unitsAvailable: "-",
     unitCost: "-",
@@ -22,7 +22,7 @@ export const strains= [
   {
     product: "Raw Flower",
     detail: "MW",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/blue-dream.png",
     unitMeasure: "oz",
     unitsAvailable: "-",
     unitCost: "-",
@@ -32,7 +32,7 @@ export const strains= [
   {
     product: "Raw Flower",
     detail: "DD",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/purple-punch-fixed.jpg",
     unitMeasure: "oz",
     unitsAvailable: "-",
     unitCost: "-",
@@ -42,7 +42,7 @@ export const strains= [
   {
     product: "Raw Flower",
     detail: "MW/DHDS",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/gsc.png",
     unitMeasure: "oz",
     unitsAvailable: "-",
     unitCost: "-",
@@ -52,7 +52,7 @@ export const strains= [
   {
     product: "Raw Flower",
     detail: "LemD",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/og-kush.png",
     unitMeasure: "oz",
     unitsAvailable: "-",
     unitCost: "-",
@@ -62,7 +62,7 @@ export const strains= [
   {
     product: "Raw Flower",
     detail: "Sativa",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/sour-diesel.jpg",
     unitMeasure: "oz",
     unitsAvailable: "-",
     unitCost: "-",
@@ -72,7 +72,7 @@ export const strains= [
   {
     product: "Raw Flower",
     detail: "Indica",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/sunset-sherbert.jpg",
     unitMeasure: "oz",
     unitsAvailable: "-",
     unitCost: "-",
@@ -82,7 +82,7 @@ export const strains= [
   {
     product: "Raw Flower",
     detail: "Cotton candy",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/granddaddy-purple.png",
     unitMeasure: "oz",
     unitsAvailable: "-",
     unitCost: "-",
@@ -102,7 +102,7 @@ export const strains= [
   {
     product: "Raw Flower",
     detail: "Lilac diesel",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/do-si-dos.jpg",
     unitMeasure: "oz",
     unitsAvailable: "-",
     unitCost: "-",
@@ -112,7 +112,7 @@ export const strains= [
   {
     product: "Raw Flower",
     detail: "Citral glue",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/jack-herer.jpg",
     unitMeasure: "oz",
     unitsAvailable: "-",
     unitCost: "-",
@@ -122,7 +122,7 @@ export const strains= [
   {
     product: "Gummies",
     detail: "Sleep CBG",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/white-widow.png",
     unitMeasure: "1 oz per pack-packs",
     unitsAvailable: "12.00",
     unitCost: "-",
@@ -132,7 +132,7 @@ export const strains= [
   {
     product: "Gummies",
     detail: "Sleep CBD/ACDC",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/pineapple-express.png",
     unitMeasure: "1 oz per pack-packs",
     unitsAvailable: "2.00",
     unitCost: "-",
@@ -142,7 +142,7 @@ export const strains= [
   {
     product: "Gummies",
     detail: "Sleep Indica",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/green-crack.png",
     unitMeasure: "1 oz per pack-packs",
     unitsAvailable: "2.00",
     unitCost: "-",
@@ -152,7 +152,7 @@ export const strains= [
   {
     product: "Gummies",
     detail: "Lift",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/bubba-kush.png",
     unitMeasure: "1 oz per pack-packs",
     unitsAvailable: "8.00",
     unitCost: "-",
@@ -162,7 +162,7 @@ export const strains= [
   {
     product: "Gummies",
     detail: "Recovery",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/northern-lights.png",
     unitMeasure: "1 oz per pack-packs",
     unitsAvailable: "2.00",
     unitCost: "-",
@@ -172,7 +172,7 @@ export const strains= [
   {
     product: "Gummies",
     detail: "Daytime CBG",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/durban-poison.jpg",
     unitMeasure: "1 oz per pack-packs",
     unitsAvailable: "14.00",
     unitCost: "-",
@@ -182,7 +182,7 @@ export const strains= [
   {
     product: "Candies",
     detail: "CBD/CBN",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/cherry-pie.jpg",
     unitMeasure: "oz",
     unitsAvailable: "4.00",
     unitCost: "-",
@@ -192,7 +192,7 @@ export const strains= [
   {
     product: "Candies",
     detail: "Lemongrass",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/strawberry-cough.png",
     unitMeasure: "oz",
     unitsAvailable: "34.00",
     unitCost: "-",
@@ -202,7 +202,7 @@ export const strains= [
   {
     product: "Candies",
     detail: "Watermelon",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/trainwreck.png",
     unitMeasure: "oz",
     unitsAvailable: "26.00",
     unitCost: "-",
@@ -212,7 +212,7 @@ export const strains= [
   {
     product: "Candies",
     detail: "Woe",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/blueberry.jpg",
     unitMeasure: "oz",
     unitsAvailable: "34.00",
     unitCost: "-",
@@ -222,7 +222,7 @@ export const strains= [
   {
     product: "Candies",
     detail: "CBG",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/super-lemon-haze.jpg",
     unitMeasure: "oz",
     unitsAvailable: "11.00",
     unitCost: "-",
@@ -232,7 +232,7 @@ export const strains= [
   {
     product: "Tinctures-Base Oil",
     detail: "Indica glycerin",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/grape-ape.jpg",
     unitMeasure: "oz",
     unitsAvailable: "",
     unitCost: "-",
@@ -242,7 +242,7 @@ export const strains= [
   {
     product: "Tinctures-Base Oil",
     detail: "Sativa",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/candyland.jpg",
     unitMeasure: "oz",
     unitsAvailable: "9.00",
     unitCost: "-",
@@ -252,7 +252,7 @@ export const strains= [
   {
     product: "Tinctures-Base Oil",
     detail: "Union custom",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/super-silver-haze.png",
     unitMeasure: "oz",
     unitsAvailable: "11.00",
     unitCost: "-",
@@ -262,7 +262,7 @@ export const strains= [
   {
     product: "Tinctures-Base Oil",
     detail: "CBN MCT",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://images.leafly.com/flower-images/platinum-gsc.jpg",
     unitMeasure: "oz",
     unitsAvailable: "2.00",
     unitCost: "-",

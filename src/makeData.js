@@ -2,7 +2,7 @@ export const strains= [
   {
     product: "Raw Flower",
     detail: "R4",
-    image: "https://images.leafly.com/flower-images/acapulco.jpg",
+    image: "https://res.cloudinary.com/dqjhgnivi/image/upload/v1736959145/tlgc9mqntb065jfb6d2o.png",
     unitMeasure: "oz",
     unitsAvailable: "-",
     unitCost: "-",
